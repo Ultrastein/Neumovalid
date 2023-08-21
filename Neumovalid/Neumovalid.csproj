@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{6A97E8C2-CA73-4363-A9A3-16BAAEE5E02F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Hyperion2</RootNamespace>
-    <AssemblyName>Hyperion2</AssemblyName>
+    <RootNamespace>Neumavalid</RootNamespace>
+    <AssemblyName>Neumavalid</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
