@@ -57,7 +57,7 @@ namespace Hyperion2
                                                               timer1.Start();            }
         }
 
-        private void button1_MouseEnter(object sender, EventArgs e)
+        private void button1_MouseEnter(object sender, EventArgs e)// dos opciones por tiempo y por boton fisico
         {
 
         }
@@ -123,8 +123,8 @@ namespace Hyperion2
                     if (valores.Length > 5)
                     {
                         altura = float.Parse(valores[4].Substring(9)) / 100;
-                        if (altura > 0)
-                            Prescion.Series[0].Points.AddXY(0,altura);
+                      //  if (altura > 0)
+                        //    Prescion.Series[0].Points.AddXY(0,altura);
                     }
                     /*
                     float humo = float.Parse(valores[1].substr(6));
