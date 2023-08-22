@@ -39,11 +39,9 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.Prescion = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -51,28 +49,40 @@
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel14 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.Detener = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.panel12 = new System.Windows.Forms.Panel();
+            this.circularProgressBar1 = new CircularProgressBar.CircularProgressBar();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel6 = new System.Windows.Forms.Panel();
+            this.circularProgressBar2 = new CircularProgressBar.CircularProgressBar();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Prescion)).BeginInit();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart4)).BeginInit();
             this.panel14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel12.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -80,18 +90,19 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(28)))), ((int)(((byte)(50)))));
             this.panel1.Controls.Add(this.comboBox2);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Location = new System.Drawing.Point(148, 12);
+            this.panel1.Location = new System.Drawing.Point(197, 15);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(232, 150);
+            this.panel1.Size = new System.Drawing.Size(252, 113);
             this.panel1.TabIndex = 0;
             // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(37, 67);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox2.Location = new System.Drawing.Point(35, 66);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(149, 21);
+            this.comboBox2.Size = new System.Drawing.Size(197, 24);
             this.comboBox2.TabIndex = 0;
             // 
             // label8
@@ -99,12 +110,14 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Cornsilk;
-            this.label8.Location = new System.Drawing.Point(14, 13);
+            this.label8.Location = new System.Drawing.Point(19, 7);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(202, 21);
+            this.label8.Size = new System.Drawing.Size(229, 30);
             this.label8.TabIndex = 16;
-            this.label8.Text = "Marca de la jeringa";
+            this.label8.Text = "Operario";
             this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // panel3
             // 
@@ -112,17 +125,30 @@
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.dateTimePicker1);
             this.panel3.Controls.Add(this.label10);
-            this.panel3.Location = new System.Drawing.Point(394, 12);
+            this.panel3.Location = new System.Drawing.Point(479, 15);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(160, 150);
+            this.panel3.Size = new System.Drawing.Size(259, 113);
             this.panel3.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Neumavalid.Properties.Resources.Basica_del_validador;
+            this.pictureBox1.Location = new System.Drawing.Point(27, 192);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(183, 434);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(2, 53);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Location = new System.Drawing.Point(35, 65);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(151, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker1.TabIndex = 18;
             // 
             // label10
@@ -130,51 +156,22 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Cornsilk;
-            this.label10.Location = new System.Drawing.Point(10, 6);
+            this.label10.Location = new System.Drawing.Point(41, 16);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(127, 21);
+            this.label10.Size = new System.Drawing.Size(169, 26);
             this.label10.TabIndex = 17;
             this.label10.Text = "fecha";
             this.label10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(28)))), ((int)(((byte)(50)))));
-            this.panel2.Controls.Add(this.comboBox3);
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.Location = new System.Drawing.Point(148, 168);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(232, 150);
-            this.panel2.TabIndex = 1;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(47, 76);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(149, 21);
-            this.comboBox3.TabIndex = 17;
-            // 
-            // label9
-            // 
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Cornsilk;
-            this.label9.Location = new System.Drawing.Point(14, 22);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(202, 21);
-            this.label9.TabIndex = 17;
-            this.label9.Text = "Modelo de la jeringa";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(28)))), ((int)(((byte)(50)))));
             this.panel5.Controls.Add(this.Prescion);
-            this.panel5.Location = new System.Drawing.Point(559, 45);
+            this.panel5.Location = new System.Drawing.Point(745, 55);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(394, 261);
+            this.panel5.Size = new System.Drawing.Size(525, 321);
             this.panel5.TabIndex = 2;
             // 
             // Prescion
@@ -207,7 +204,8 @@
             legend1.Name = "Legend1";
             legend1.TitleBackColor = System.Drawing.Color.White;
             this.Prescion.Legends.Add(legend1);
-            this.Prescion.Location = new System.Drawing.Point(0, -3);
+            this.Prescion.Location = new System.Drawing.Point(0, -4);
+            this.Prescion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Prescion.Name = "Prescion";
             series1.BorderWidth = 2;
             series1.ChartArea = "ChartArea1";
@@ -216,17 +214,18 @@
             series1.Legend = "Legend1";
             series1.Name = "Altura";
             this.Prescion.Series.Add(series1);
-            this.Prescion.Size = new System.Drawing.Size(394, 261);
+            this.Prescion.Size = new System.Drawing.Size(525, 321);
             this.Prescion.TabIndex = 0;
-            this.Prescion.Text = "chart1";
+            this.Prescion.Text = "Volumen";
             // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(28)))), ((int)(((byte)(50)))));
             this.panel8.Controls.Add(this.chart4);
-            this.panel8.Location = new System.Drawing.Point(148, 355);
+            this.panel8.Location = new System.Drawing.Point(197, 327);
+            this.panel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(250, 150);
+            this.panel8.Size = new System.Drawing.Size(515, 295);
             this.panel8.TabIndex = 2;
             // 
             // chart4
@@ -260,7 +259,8 @@
             legend2.Name = "Legend1";
             legend2.TitleBackColor = System.Drawing.Color.White;
             this.chart4.Legends.Add(legend2);
-            this.chart4.Location = new System.Drawing.Point(1, 3);
+            this.chart4.Location = new System.Drawing.Point(1, 0);
+            this.chart4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chart4.Name = "chart4";
             series2.BorderWidth = 2;
             series2.ChartArea = "ChartArea1";
@@ -269,7 +269,7 @@
             series2.Legend = "Legend1";
             series2.Name = "Lx.";
             this.chart4.Series.Add(series2);
-            this.chart4.Size = new System.Drawing.Size(250, 150);
+            this.chart4.Size = new System.Drawing.Size(513, 290);
             this.chart4.TabIndex = 3;
             this.chart4.Text = "chart4";
             this.chart4.Click += new System.EventHandler(this.chart4_Click);
@@ -279,11 +279,12 @@
             this.label4.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
             this.label4.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Cornsilk;
-            this.label4.Location = new System.Drawing.Point(705, 19);
+            this.label4.Location = new System.Drawing.Point(940, 23);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(105, 23);
+            this.label4.Size = new System.Drawing.Size(140, 28);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Prescion";
+            this.label4.Text = "Volumen";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
@@ -292,9 +293,10 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Cornsilk;
-            this.button1.Location = new System.Drawing.Point(11, 26);
+            this.button1.Location = new System.Drawing.Point(13, 23);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 47);
+            this.button1.Size = new System.Drawing.Size(144, 58);
             this.button1.TabIndex = 11;
             this.button1.Text = "Conectar";
             this.button1.UseVisualStyleBackColor = false;
@@ -305,23 +307,36 @@
             // panel14
             // 
             this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(28)))), ((int)(((byte)(50)))));
+            this.panel14.Controls.Add(this.pictureBox2);
             this.panel14.Controls.Add(this.Detener);
             this.panel14.Controls.Add(this.comboBox1);
             this.panel14.Controls.Add(this.textBox1);
             this.panel14.Controls.Add(this.button1);
             this.panel14.Location = new System.Drawing.Point(1, -1);
+            this.panel14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(130, 536);
+            this.panel14.Size = new System.Drawing.Size(173, 660);
             this.panel14.TabIndex = 12;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Neumavalid.Properties.Resources.Colegio_León_XIII_logo_escudo;
+            this.pictureBox2.Location = new System.Drawing.Point(39, 108);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(99, 96);
+            this.pictureBox2.TabIndex = 18;
+            this.pictureBox2.TabStop = false;
             // 
             // Detener
             // 
             this.Detener.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.Detener.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Detener.ForeColor = System.Drawing.Color.Cornsilk;
-            this.Detener.Location = new System.Drawing.Point(10, 245);
+            this.Detener.Location = new System.Drawing.Point(13, 302);
+            this.Detener.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Detener.Name = "Detener";
-            this.Detener.Size = new System.Drawing.Size(108, 47);
+            this.Detener.Size = new System.Drawing.Size(144, 58);
             this.Detener.TabIndex = 16;
             this.Detener.Text = "Detener";
             this.Detener.UseVisualStyleBackColor = false;
@@ -329,26 +344,29 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(6, 421);
+            this.comboBox1.Location = new System.Drawing.Point(8, 518);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(160, 24);
             this.comboBox1.TabIndex = 15;
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 3.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(19, 510);
+            this.textBox1.Location = new System.Drawing.Point(25, 628);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(85, 13);
+            this.textBox1.Size = new System.Drawing.Size(112, 15);
             this.textBox1.TabIndex = 14;
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Cornsilk;
-            this.label1.Location = new System.Drawing.Point(580, 324);
+            this.label1.Location = new System.Drawing.Point(825, 386);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 23);
+            this.label1.Size = new System.Drawing.Size(140, 28);
             this.label1.TabIndex = 13;
             this.label1.Text = "Volumen";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -362,10 +380,46 @@
             // panel12
             // 
             this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(28)))), ((int)(((byte)(50)))));
-            this.panel12.Location = new System.Drawing.Point(574, 355);
+            this.panel12.Controls.Add(this.circularProgressBar1);
+            this.panel12.Location = new System.Drawing.Point(817, 425);
+            this.panel12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(119, 119);
+            this.panel12.Size = new System.Drawing.Size(159, 146);
             this.panel12.TabIndex = 10;
+            // 
+            // circularProgressBar1
+            // 
+            this.circularProgressBar1.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
+            this.circularProgressBar1.AnimationSpeed = 500;
+            this.circularProgressBar1.BackColor = System.Drawing.Color.Transparent;
+            this.circularProgressBar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.circularProgressBar1.ForeColor = System.Drawing.Color.Cornsilk;
+            this.circularProgressBar1.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(28)))), ((int)(((byte)(50)))));
+            this.circularProgressBar1.InnerMargin = 2;
+            this.circularProgressBar1.InnerWidth = -1;
+            this.circularProgressBar1.Location = new System.Drawing.Point(-4, -4);
+            this.circularProgressBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.circularProgressBar1.MarqueeAnimationSpeed = 2000;
+            this.circularProgressBar1.Maximum = 1100;
+            this.circularProgressBar1.Name = "circularProgressBar1";
+            this.circularProgressBar1.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.circularProgressBar1.OuterMargin = -25;
+            this.circularProgressBar1.OuterWidth = 26;
+            this.circularProgressBar1.ProgressColor = System.Drawing.Color.Olive;
+            this.circularProgressBar1.ProgressWidth = 25;
+            this.circularProgressBar1.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.circularProgressBar1.Size = new System.Drawing.Size(167, 154);
+            this.circularProgressBar1.StartAngle = 270;
+            this.circularProgressBar1.SubscriptColor = System.Drawing.Color.Cornsilk;
+            this.circularProgressBar1.SubscriptMargin = new System.Windows.Forms.Padding(10, -30, 0, 0);
+            this.circularProgressBar1.SubscriptText = "";
+            this.circularProgressBar1.SuperscriptColor = System.Drawing.Color.Cornsilk;
+            this.circularProgressBar1.SuperscriptMargin = new System.Windows.Forms.Padding(10, 17, 0, 0);
+            this.circularProgressBar1.SuperscriptText = "m3";
+            this.circularProgressBar1.TabIndex = 2;
+            this.circularProgressBar1.Text = "1025";
+            this.circularProgressBar1.TextMargin = new System.Windows.Forms.Padding(0);
+            this.circularProgressBar1.Value = 1025;
             // 
             // timer1
             // 
@@ -375,18 +429,55 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(28)))), ((int)(((byte)(50)))));
-            this.panel6.Location = new System.Drawing.Point(699, 355);
+            this.panel6.Controls.Add(this.circularProgressBar2);
+            this.panel6.Location = new System.Drawing.Point(1051, 430);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(120, 119);
+            this.panel6.Size = new System.Drawing.Size(160, 146);
             this.panel6.TabIndex = 15;
+            // 
+            // circularProgressBar2
+            // 
+            this.circularProgressBar2.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
+            this.circularProgressBar2.AnimationSpeed = 500;
+            this.circularProgressBar2.BackColor = System.Drawing.Color.Transparent;
+            this.circularProgressBar2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.circularProgressBar2.ForeColor = System.Drawing.Color.Cornsilk;
+            this.circularProgressBar2.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(28)))), ((int)(((byte)(50)))));
+            this.circularProgressBar2.InnerMargin = 2;
+            this.circularProgressBar2.InnerWidth = -1;
+            this.circularProgressBar2.Location = new System.Drawing.Point(-3, -4);
+            this.circularProgressBar2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.circularProgressBar2.MarqueeAnimationSpeed = 2000;
+            this.circularProgressBar2.Maximum = 1100;
+            this.circularProgressBar2.Name = "circularProgressBar2";
+            this.circularProgressBar2.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.circularProgressBar2.OuterMargin = -25;
+            this.circularProgressBar2.OuterWidth = 26;
+            this.circularProgressBar2.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(25)))), ((int)(((byte)(255)))));
+            this.circularProgressBar2.ProgressWidth = 25;
+            this.circularProgressBar2.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.circularProgressBar2.Size = new System.Drawing.Size(167, 154);
+            this.circularProgressBar2.StartAngle = 270;
+            this.circularProgressBar2.SubscriptColor = System.Drawing.Color.Cornsilk;
+            this.circularProgressBar2.SubscriptMargin = new System.Windows.Forms.Padding(10, -30, 0, 0);
+            this.circularProgressBar2.SubscriptText = "";
+            this.circularProgressBar2.SuperscriptColor = System.Drawing.Color.Cornsilk;
+            this.circularProgressBar2.SuperscriptMargin = new System.Windows.Forms.Padding(10, 17, 0, 0);
+            this.circularProgressBar2.SuperscriptText = "Litros";
+            this.circularProgressBar2.TabIndex = 2;
+            this.circularProgressBar2.Text = "1025";
+            this.circularProgressBar2.TextMargin = new System.Windows.Forms.Padding(0);
+            this.circularProgressBar2.Value = 1025;
             // 
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Cornsilk;
-            this.label6.Location = new System.Drawing.Point(705, 324);
+            this.label6.Location = new System.Drawing.Point(1059, 391);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(105, 23);
+            this.label6.Size = new System.Drawing.Size(140, 28);
             this.label6.TabIndex = 16;
             this.label6.Text = "LITROS";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -397,9 +488,10 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Cornsilk;
-            this.label7.Location = new System.Drawing.Point(210, 331);
+            this.label7.Location = new System.Drawing.Point(391, 287);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(112, 21);
+            this.label7.Size = new System.Drawing.Size(149, 26);
             this.label7.TabIndex = 16;
             this.label7.Text = "Litros";
             this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -409,9 +501,10 @@
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.button2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.Cornsilk;
-            this.button2.Location = new System.Drawing.Point(844, 474);
+            this.button2.Location = new System.Drawing.Point(1125, 583);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(108, 47);
+            this.button2.Size = new System.Drawing.Size(144, 58);
             this.button2.TabIndex = 16;
             this.button2.Text = "descargar datos";
             this.button2.UseVisualStyleBackColor = false;
@@ -420,24 +513,80 @@
             // 
             this.printDialog1.UseEXDialog = true;
             // 
-            // pictureBox1
+            // label2
             // 
-            this.pictureBox1.Image = global::Hyperion2.Properties.Resources.Basica_del_validador;
-            this.pictureBox1.Location = new System.Drawing.Point(20, 156);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(137, 353);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Cornsilk;
+            this.label2.Location = new System.Drawing.Point(4, 7);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(243, 30);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Marca de la jeringa";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(28)))), ((int)(((byte)(50)))));
+            this.panel2.Controls.Add(this.comboBox3);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Location = new System.Drawing.Point(197, 146);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(251, 113);
+            this.panel2.TabIndex = 17;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(35, 66);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(197, 24);
+            this.comboBox3.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Cornsilk;
+            this.label3.Location = new System.Drawing.Point(21, 7);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(211, 30);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Modelo";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(28)))), ((int)(((byte)(50)))));
+            this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.comboBox4);
+            this.panel4.Location = new System.Drawing.Point(479, 146);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(259, 113);
+            this.panel4.TabIndex = 17;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(35, 66);
+            this.comboBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(197, 24);
+            this.comboBox4.TabIndex = 0;
             // 
             // Validador
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(21)))), ((int)(((byte)(38)))));
-            this.ClientSize = new System.Drawing.Size(965, 534);
+            this.ClientSize = new System.Drawing.Size(1287, 657);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -449,22 +598,26 @@
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Validador";
             this.Text = "Neumo-valid";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Prescion)).EndInit();
             this.panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart4)).EndInit();
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel12.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -473,7 +626,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.DataVisualization.Charting.Chart Prescion;
@@ -492,14 +644,21 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button Detener;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PrintDialog printDialog1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private CircularProgressBar.CircularProgressBar circularProgressBar1;
+        private CircularProgressBar.CircularProgressBar circularProgressBar2;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 

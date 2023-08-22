@@ -94,5 +94,8 @@
   <ItemGroup>
     <None Include="Resources\Basica del validador.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Colegio-León-XIII_logo_escudo.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

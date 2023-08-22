@@ -69,5 +69,15 @@ namespace Neumavalid.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Colegio_León_XIII_logo_escudo {
+            get {
+                object obj = ResourceManager.GetObject("Colegio-León-XIII_logo_escudo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
