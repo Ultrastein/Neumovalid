@@ -183,12 +183,6 @@
     <Compile Include="Formularios\frmMedidores.Designer.cs">
       <DependentUpon>frmMedidores.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmAcerca.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmAcerca.Designer.cs">
-      <DependentUpon>frmAcerca.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\frmConfiguracion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,12 +195,6 @@
     <Compile Include="Formularios\frmMainMenu.Designer.cs">
       <DependentUpon>frmMainMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmMain.designer.cs">
-      <DependentUpon>frmMain.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\frmEmulador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,17 +206,11 @@
     <EmbeddedResource Include="Formularios\frmMedidores.resx">
       <DependentUpon>frmMedidores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmAcerca.resx">
-      <DependentUpon>frmAcerca.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmConfiguracion.resx">
       <DependentUpon>frmConfiguracion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmMainMenu.resx">
       <DependentUpon>frmMainMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmMain.resx">
-      <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmEmulador.resx">
       <DependentUpon>frmEmulador.cs</DependentUpon>
