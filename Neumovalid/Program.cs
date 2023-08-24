@@ -15,10 +15,11 @@ namespace NeumoValid
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
+            
+         //   Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Validador());
-            //Application.Run(new frmPOC());
+             Application.Run(new frmMainMenu());
+             
         }
     }
 }

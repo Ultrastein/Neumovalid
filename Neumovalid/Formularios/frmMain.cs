@@ -10,16 +10,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-
+using System.Threading; 
 namespace NeumoValid
 {
     public partial class Validador : Form
     {
         System.IO.Ports.SerialPort puerto_serie;
+     
         public Validador()
         {
             InitializeComponent();
+
             
+
+
+
             this.FormClosed += new FormClosedEventHandler(Form1_FormClosed);
             string[] ports = SerialPort.GetPortNames(); 
             foreach (string port in ports) {
@@ -186,8 +191,28 @@ namespace NeumoValid
 
         private void btnEmulador_Click(object sender, EventArgs e)
         {
-            frmPOC f = new frmPOC();
+            frmEmulador f = new frmEmulador();
             f.Show();
+        }
+
+        private void Validador_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Validador_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnDetener_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
