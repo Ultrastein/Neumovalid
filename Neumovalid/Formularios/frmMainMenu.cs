@@ -133,12 +133,7 @@ namespace Neumavalid
             ActivateButton(sender, RGBColors.color1);
             OpenChildForm(new frmMedidores());
         }
-
-        private void btnAcerca_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color2);
-            OpenChildForm(new frmAcerca());
-        }
+ 
 
         private void btnHome_Click(object sender, EventArgs e)
         {
