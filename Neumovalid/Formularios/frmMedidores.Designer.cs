@@ -45,7 +45,7 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.cmbComPort = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblFecha = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbModelos = new System.Windows.Forms.ComboBox();
@@ -274,12 +274,12 @@
             this.cmbComPort.FormattingEnabled = true;
             this.cmbComPort.Location = new System.Drawing.Point(6, 29);
             this.cmbComPort.Name = "cmbComPort";
-            this.cmbComPort.Size = new System.Drawing.Size(160, 25);
+            this.cmbComPort.Size = new System.Drawing.Size(160, 40);
             this.cmbComPort.TabIndex = 4;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.lblFecha);
             this.groupBox1.ForeColor = System.Drawing.Color.Gainsboro;
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
@@ -288,15 +288,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fecha Medicion";
             // 
-            // label5
+            // lblFecha
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 12.75F);
-            this.label5.Location = new System.Drawing.Point(6, 33);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(96, 21);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "12/12/2023";
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Font = new System.Drawing.Font("Century Gothic", 12.75F);
+            this.lblFecha.Location = new System.Drawing.Point(6, 33);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(199, 40);
+            this.lblFecha.TabIndex = 4;
+            this.lblFecha.Text = "12/12/2023";
             // 
             // groupBox4
             // 
@@ -317,7 +317,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(352, 23);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 17);
+            this.label6.Size = new System.Drawing.Size(114, 32);
             this.label6.TabIndex = 7;
             this.label6.Text = "Modelo";
             // 
@@ -327,7 +327,7 @@
             this.cmbModelos.FormattingEnabled = true;
             this.cmbModelos.Location = new System.Drawing.Point(415, 20);
             this.cmbModelos.Name = "cmbModelos";
-            this.cmbModelos.Size = new System.Drawing.Size(266, 25);
+            this.cmbModelos.Size = new System.Drawing.Size(266, 40);
             this.cmbModelos.TabIndex = 6;
             // 
             // label4
@@ -335,7 +335,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(6, 23);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 17);
+            this.label4.Size = new System.Drawing.Size(100, 32);
             this.label4.TabIndex = 5;
             this.label4.Text = "Marca";
             // 
@@ -345,7 +345,7 @@
             this.cmbMarcas.FormattingEnabled = true;
             this.cmbMarcas.Location = new System.Drawing.Point(75, 20);
             this.cmbMarcas.Name = "cmbMarcas";
-            this.cmbMarcas.Size = new System.Drawing.Size(256, 25);
+            this.cmbMarcas.Size = new System.Drawing.Size(256, 40);
             this.cmbMarcas.TabIndex = 4;
             // 
             // groupBox2
@@ -365,7 +365,7 @@
             this.cmbReferentes.FormattingEnabled = true;
             this.cmbReferentes.Location = new System.Drawing.Point(6, 25);
             this.cmbReferentes.Name = "cmbReferentes";
-            this.cmbReferentes.Size = new System.Drawing.Size(325, 25);
+            this.cmbReferentes.Size = new System.Drawing.Size(325, 40);
             this.cmbReferentes.TabIndex = 4;
             // 
             // groupBox3
@@ -389,7 +389,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(268, 117);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 17);
+            this.label3.Size = new System.Drawing.Size(103, 32);
             this.label3.TabIndex = 5;
             this.label3.Text = "Presion";
             // 
@@ -398,7 +398,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(140, 117);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 17);
+            this.label2.Size = new System.Drawing.Size(143, 32);
             this.label2.TabIndex = 4;
             this.label2.Text = "Humedad";
             // 
@@ -407,7 +407,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(11, 117);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 17);
+            this.label1.Size = new System.Drawing.Size(177, 32);
             this.label1.TabIndex = 3;
             this.label1.Text = "Temperatura";
             // 
@@ -506,7 +506,7 @@
             chartArea1.Name = "ChartArea1";
             this.chartLitros.ChartAreas.Add(chartArea1);
             this.chartLitros.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chartLitros.Location = new System.Drawing.Point(3, 19);
+            this.chartLitros.Location = new System.Drawing.Point(3, 35);
             this.chartLitros.Name = "chartLitros";
             series1.BorderWidth = 2;
             series1.ChartArea = "ChartArea1";
@@ -515,7 +515,7 @@
             series1.Font = new System.Drawing.Font("Century Gothic", 6F);
             series1.Name = "Series1";
             this.chartLitros.Series.Add(series1);
-            this.chartLitros.Size = new System.Drawing.Size(681, 236);
+            this.chartLitros.Size = new System.Drawing.Size(681, 220);
             this.chartLitros.TabIndex = 29;
             this.chartLitros.Text = "chart4";
             // 
@@ -572,7 +572,7 @@
         private System.Windows.Forms.ComboBox cmbModelos;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblFecha;
         private FontAwesome.Sharp.IconButton btnStartManual;
         private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton btnEndManual;

@@ -124,10 +124,14 @@ namespace Neumavalid
 
         private void btnSetting_Click(object sender, EventArgs e)
         {
+            //String clave = "1234";
+            //DialogResult result = MessageBox.Show("Incgrese la clave","Clave",);
+            //ShowMyDialogBox();
+
             ActivateButton(sender, RGBColors.color3);
             OpenChildForm(new frmConfiguracion());
         }
-
+       
         private void btnMediciones_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);

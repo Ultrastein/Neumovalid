@@ -46,6 +46,7 @@ namespace Neumavalid
         }
         private void InicializarValores()
         {
+            lblFecha.Text=DateTime.Now.ToShortDateString();
             string[] ports = SerialPort.GetPortNames();
             foreach (string port in ports)
             {
@@ -194,19 +195,30 @@ namespace Neumavalid
             contents += "Presion::" + gaugePresion.Value.ToString() + "\n";
             contents += "Temperatura::" + gaugeTemperatura.Value.ToString() + "\n";
 
-
-            contents += "Mediciones de Volumen\n";
-
-            if (ListaMediciones.Count>0)
-            {
-                foreach(var item in ListaMediciones)
-                {
-
-                    contents +=item.Item2.ToString() + ">" + item.Item1.ToString() + "\n";
-
-                }
+            if (ListaMediciones.Count > 0) {
+                contents += "Volumen::" +
+                    ListaMediciones[ListaMediciones.Count-1].Item2.ToString() +">" +
+                    ListaMediciones[ListaMediciones.Count - 1].Item1.ToString()
+                    + "\n";
 
             }
+            else {
+                contents += "Volumen::Sin Datos\n";
+
+            }
+
+            //contents += "Mediciones de Volumen\n";
+
+            //if (ListaMediciones.Count>0)
+            //{
+            //    foreach(var item in ListaMediciones)
+            //    {
+
+            //        contents +=item.Item2.ToString() + ">" + item.Item1.ToString() + "\n";
+
+            //    }
+
+            //}
 
             contents += "\n";
             contents += "\n";
