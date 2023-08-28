@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Neumavalid;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Hyperion2
+namespace NeumoValid
 {
     internal static class Program
     {
@@ -14,9 +15,11 @@ namespace Hyperion2
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
+            
+         //   Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Validador());
+             Application.Run(new frmMainMenu());
+             
         }
     }
 }
