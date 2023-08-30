@@ -15,6 +15,7 @@ using static Neumavalid.Clases.Common;
 using System.IO.Ports;
 using System.IO;
 using System.Windows.Markup;
+using System.Globalization;
 
 namespace Neumavalid
 {
@@ -74,31 +75,41 @@ namespace Neumavalid
 
                 string Marcas = data["jeringa"]["marca"].ToUpper();
                 string Modelos  = data["jeringa"]["modelo"].ToUpper();
-                string Referentes = data["referente"]["personas"].ToUpper();
-
+                string Operador = data["referente"]["personas"].ToUpper();
+                string Propietario = data["jeringa"]["propietario"].ToUpper();
+                string Ndeserie = data["jeringa"]["nserie"].ToUpper();
                 cmbComPort.SelectedIndex = cmbComPort.FindStringExact(data["COM"]["Default"]);
 
                 List<string> list = new List<string>();
                 list = Marcas.Split(';').ToList();
-                cmbMarcas.Items.Clear();
-                cmbMarcas.Items.AddRange( list.ToArray());
-                if(cmbMarcas.Items.Count>0) cmbMarcas.SelectedIndex = 1;
+                cmbmarca.Items.Clear();
+                cmbmarca.Items.AddRange( list.ToArray());
+                if(cmbmarca.Items.Count>0) cmbmarca.SelectedIndex = 0;
 
                 list = new List<string>();
                 list = Modelos.Split(';').ToList();
-                cmbModelos.Items.Clear();
-                cmbModelos.Items.AddRange(list.ToArray());
-                if (cmbModelos.Items.Count > 0) cmbModelos.SelectedIndex = 1;
+                cmbmodelo.Items.Clear();
+                cmbmodelo.Items.AddRange(list.ToArray());
+                if (cmbmodelo.Items.Count > 0) cmbmodelo.SelectedIndex = 0;
 
                 list = new List<string>();
-                list = Referentes.Split(';').ToList();
-                cmbReferentes.Items.Clear();
-                cmbReferentes.Items.AddRange(list.ToArray());
-                if (cmbReferentes.Items.Count > 0) cmbReferentes.SelectedIndex = 1;
+                list = Operador.Split(';').ToList();
+                cmboperador.Items.Clear();
+                cmboperador.Items.AddRange(list.ToArray());
+                if (cmboperador.Items.Count > 0) cmboperador.SelectedIndex = 0;
 
+                //cosas nuevas//
+                list = new List<string>();
+                list = Propietario.Split(';').ToList();
+                cmbpropieterio.Items.Clear();
+                cmbpropieterio.Items.AddRange(list.ToArray());
+                if (cmbpropieterio.Items.Count > 0) cmbpropieterio.SelectedIndex = 0;
 
-               
-
+                list = new List<string>();
+                list = Ndeserie.Split(';').ToList();
+                cmbNdeserie.Items.Clear();
+                cmbNdeserie.Items.AddRange(list.ToArray());
+                if (cmbNdeserie.Items.Count > 0) cmbNdeserie.SelectedIndex = 0;
 
             }
             catch (Exception ex)
@@ -186,21 +197,21 @@ namespace Neumavalid
 
 
             string contents = "";
-            contents += "Referente::" + cmbReferentes.SelectedItem.ToString() + "\n";
-            contents += "MArca Jeringa::" + cmbMarcas.SelectedItem.ToString() + "\n";
-            contents += "Modelo Jeringa::" + cmbModelos.SelectedItem.ToString() + "\n";
+            contents += "Fecha::" + DateTime.Now.ToShortDateString()+ "\n";//imprime solo la fecha
+            contents += "Nº de ensayo::" + numensayo.Value.ToString() + "\n";
+            contents += "Operador::" + cmboperador.SelectedItem.ToString() + "\n";
+            contents += "propietario::" + cmbpropieterio.SelectedItem.ToString() + "\n";
+            contents += "Marca Jeringa::" + cmbmarca.SelectedItem.ToString() + "\n";
+            contents += "Modelo Jeringa::" + cmbmodelo.SelectedItem.ToString() + "\n";
+            contents += "Nº de serie::" + cmbNdeserie.SelectedItem.ToString() + "\n";
             contents += "Puerto::" + cmbComPort.SelectedItem.ToString() + "\n";
-
             contents += "Humedad::" + gaugeHumedad.Value.ToString() + "\n";
             contents += "Presion::" + gaugePresion.Value.ToString() + "\n";
             contents += "Temperatura::" + gaugeTemperatura.Value.ToString() + "\n";
 
             if (ListaMediciones.Count > 0) {
-                contents += "Volumen::" +
-                    ListaMediciones[ListaMediciones.Count-1].Item2.ToString() +">" +
-                    ListaMediciones[ListaMediciones.Count - 1].Item1.ToString()
-                    + "\n";
-
+                contents += "Volumen::" + ListaMediciones[ListaMediciones.Count - 1].Item1.ToString() + "\n";
+                
             }
             else {
                 contents += "Volumen::Sin Datos\n";
@@ -229,7 +240,7 @@ namespace Neumavalid
             Stream myStream;
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
 
-            saveFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            saveFileDialog1.Filter = "word files (*.docx)|*.docx|All files (*.*)|*.*";
             saveFileDialog1.FilterIndex = 2;
             saveFileDialog1.RestoreDirectory = true;
 
@@ -370,5 +381,41 @@ namespace Neumavalid
                 puerto_serie.Close();
             }
         }
+
+        private void groupBox6_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlFormulario_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void chartLitros_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox7_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbMarcas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
+
 }

@@ -55,6 +55,12 @@ namespace Neumavalid.Clases
                 data["jeringa"]["marca"] = "marca1;marca2".ToUpper();
                 data["jeringa"]["modelo"] = "modelo1;modelo2".ToUpper();
                 data["referente"]["personas"] = "persona1;persona2".ToUpper();
+                data["jeringa"]["nserie"] = "0".ToUpper();
+                data["jeringa"]["propietario"] = "propierario1".ToUpper();
+
+
+
+
                 parser.WriteFile("settings.ini", data);
             }
 

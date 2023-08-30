@@ -257,6 +257,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon-32x32.ico" />
+    <None Include="Resources\NeumoValid1.png" />
+    <None Include="Resources\NeumoValid.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

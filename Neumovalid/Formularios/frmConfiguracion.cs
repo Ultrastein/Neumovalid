@@ -49,10 +49,13 @@ namespace Neumavalid
                 txtComandoIniciar.Text = data["comandos"]["iniciar"].ToUpper();
                 txtComandoDetener.Text = data["comandos"]["detener"].ToUpper();
                 cmbComPort.SelectedIndex = cmbComPort.FindStringExact(data["COM"]["Default"]);
-
                 lstMarcas.Text = data["jeringa"]["marca"].ToUpper();
                 lstModelos.Text = data["jeringa"]["modelo"].ToUpper();
+                lstNºdeserie.Text = data["jeringa"]["nserie"].ToUpper();
                 lstReferentes.Text = data["referente"]["personas"].ToUpper();
+                
+                lstpropi.Text = data["jeringa"]["propietario"].ToUpper();
+                
             }
             catch (Exception ex)
             {
@@ -81,17 +84,29 @@ namespace Neumavalid
             data["COM"]["Default"] = cmbComPort.SelectedItem.ToString();
             data["jeringa"]["marca"] = lstMarcas.Text.ToUpper();
             data["jeringa"]["modelo"] = lstModelos.Text.ToUpper();
+            data["jeringa"]["nserie"] = lstNºdeserie.Text.ToUpper();
             data["referente"]["personas"] = lstReferentes.Text.ToUpper();
 
+            data["jeringa"]["propietario"] = lstpropi.Text.ToUpper();
 
             var parser = new FileIniDataParser();
             parser.WriteFile("settings.ini", data);
 
         }
-       
 
-      
- 
- 
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lstDueño_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lstReferentes_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
