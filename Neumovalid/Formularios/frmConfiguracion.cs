@@ -86,7 +86,6 @@ namespace Neumavalid
             data["jeringa"]["modelo"] = lstModelos.Text.ToUpper();
             data["jeringa"]["nserie"] = lstNºdeserie.Text.ToUpper();
             data["referente"]["personas"] = lstReferentes.Text.ToUpper();
-
             data["jeringa"]["propietario"] = lstpropi.Text.ToUpper();
 
             var parser = new FileIniDataParser();

@@ -16,6 +16,7 @@ using System.IO.Ports;
 using System.IO;
 using System.Windows.Markup;
 using System.Globalization;
+using System.Runtime.CompilerServices;
 
 namespace Neumavalid
 {
@@ -190,13 +191,18 @@ namespace Neumavalid
                 puerto_serie.Close();
             }
         }
-
+        private void btnalatabla_Click(object sender, EventArgs e)
+        {
+            
+        }
         private void btnExportar_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
 
 
             string contents = "";
+            contents += "Leonxiii" + "\n";
+            contents += "Validacion de jeringa" + "\n";
             contents += "Fecha::" + DateTime.Now.ToShortDateString()+ "\n";//imprime solo la fecha
             contents += "Nº de ensayo::" + numensayo.Value.ToString() + "\n";
             contents += "Operador::" + cmboperador.SelectedItem.ToString() + "\n";
@@ -217,7 +223,6 @@ namespace Neumavalid
                 contents += "Volumen::Sin Datos\n";
 
             }
-
             //contents += "Mediciones de Volumen\n";
 
             //if (ListaMediciones.Count>0)
@@ -413,6 +418,16 @@ namespace Neumavalid
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconButton2_Click(object sender, EventArgs e)
         {
 
         }
