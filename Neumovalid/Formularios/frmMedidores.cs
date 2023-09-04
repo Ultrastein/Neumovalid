@@ -36,7 +36,8 @@ namespace Neumavalid
         private Boolean chkEliminar_n = true;
         private Boolean chkEnviar_r = true;
         private Boolean chkEnviar_n = true;
-        private List<Tuple<int, string>> ListaMediciones =  new List<Tuple<int, string>>() ;
+        private List<Medicion> ListaMediciones =  new List<Medicion>() ;
+        private List<Ensayo> ListaEnsayos = new List<Ensayo>();
         public frmMedidores()
         {
             InitializeComponent();
@@ -112,6 +113,9 @@ namespace Neumavalid
                 cmbNdeserie.Items.AddRange(list.ToArray());
                 if (cmbNdeserie.Items.Count > 0) cmbNdeserie.SelectedIndex = 0;
 
+
+                ListaEnsayos = new List<Ensayo>();
+
             }
             catch (Exception ex)
             {
@@ -174,7 +178,9 @@ namespace Neumavalid
             else if (sensor == SensorVolumen)
             {
                 chartLitros.Series[chartLitros.Series.Count - 1].Points.AddXY(DateTime.Now.ToLongTimeString(), Convert.ToInt32(newValue));
-                ListaMediciones.Add(new Tuple<int, string>(Convert.ToInt32(newValue), DateTime.Now.ToLongDateString() + "::" + DateTime.Now.ToLongTimeString()));
+               // ListaMediciones.Add(new Tuple<int, string>(Convert.ToInt32(newValue), DateTime.Now.ToLongDateString() + "::" + DateTime.Now.ToLongTimeString()));
+
+                ListaMediciones.Add(new Medicion(DateTime.Now,Convert.ToDouble(newValue)));
 
             }
 
@@ -185,11 +191,22 @@ namespace Neumavalid
 
         private void btnDetener_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color3);
+         ActivateButton(sender, RGBColors.color3);
             if (puerto_serie != null && puerto_serie.IsOpen)
             {
                 puerto_serie.Close();
             }
+
+            int nroensayo =Convert.ToInt32( cmbNumEnsayo.Value);
+
+            if (ListaMediciones.Count > 0)
+            {
+                ListaEnsayos.Add(new Ensayo(nroensayo, ListaMediciones[ListaMediciones.Count - 1]));
+            }
+
+
+            lstEnsayos.Items.Add(ListaEnsayos[ListaEnsayos.Count-1]);
+        
         }
         private void btnalatabla_Click(object sender, EventArgs e)
         {
@@ -204,7 +221,7 @@ namespace Neumavalid
             contents += "Leonxiii" + "\n";
             contents += "Validacion de jeringa" + "\n";
             contents += "Fecha::" + DateTime.Now.ToShortDateString()+ "\n";//imprime solo la fecha
-            contents += "Nº de ensayo::" + numensayo.Value.ToString() + "\n";
+            contents += "Nº de ensayo::" + cmbNumEnsayo.Value.ToString() + "\n";
             contents += "Operador::" + cmboperador.SelectedItem.ToString() + "\n";
             contents += "propietario::" + cmbpropieterio.SelectedItem.ToString() + "\n";
             contents += "Marca Jeringa::" + cmbmarca.SelectedItem.ToString() + "\n";
@@ -216,7 +233,7 @@ namespace Neumavalid
             contents += "Temperatura::" + gaugeTemperatura.Value.ToString() + "\n";
 
             if (ListaMediciones.Count > 0) {
-                contents += "Volumen::" + ListaMediciones[ListaMediciones.Count - 1].Item1.ToString() + "\n";
+                contents += "Volumen::" + ListaMediciones[ListaMediciones.Count - 1].valorToma.ToString() + "\n";
                 
             }
             else {

@@ -178,6 +178,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\Common.cs" />
+    <Compile Include="Clases\Entidades.cs" />
     <Compile Include="Formularios\frmClave.cs">
       <SubType>Form</SubType>
     </Compile>
