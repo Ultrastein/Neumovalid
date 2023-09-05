@@ -116,6 +116,20 @@ namespace Neumavalid
 
                 ListaEnsayos = new List<Ensayo>();
 
+                lstEnsayos2.GridLines = true;// Whether the grid lines are displayed
+                lstEnsayos2.FullRowSelect = true;// Whether to select the entire line
+
+                lstEnsayos2.View = View.Details;// Set display mode
+                lstEnsayos2.Scrollable = true;// Whether to show the scroll bar automatically
+                lstEnsayos2.MultiSelect = false;// Is it possible to select multiple lines
+
+                // Add header(column)
+
+               
+                lstEnsayos2.Columns.Add("Muestra", 70, HorizontalAlignment.Center);
+                lstEnsayos2.Columns.Add("Momento Toma", 200, HorizontalAlignment.Center);
+                lstEnsayos2.Columns.Add("Valor", 100, HorizontalAlignment.Center);
+
             }
             catch (Exception ex)
             {
@@ -139,16 +153,35 @@ namespace Neumavalid
                 puerto_serie.Open();
 
             }
+            else
+            {
+                puerto_serie = null; 
+                string puerto = cmbComPort.GetItemText(this.cmbComPort.SelectedItem);
+                puerto_serie = new SerialPort(puerto, 115200); // colocar COM y baudrate corresp.
+                puerto_serie.ReadTimeout = 20;
+                puerto_serie.Handshake = Handshake.None;
+                puerto_serie.DataReceived += new SerialDataReceivedEventHandler(sp_DataReceived);
+                puerto_serie.WriteTimeout = 500;
+                puerto_serie.Close();
+                puerto_serie.Open();
+            }
 
         }
         private void sp_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
         {
 
+            try
+            {
+                string data = puerto_serie.ReadLine();
 
+                this.BeginInvoke(new SetTextDeleg(si_DataReceived), new object[] { data });
+            }
+            catch(Exception ex)
+            {
+
+            }
             //  Thread.Sleep(500);
-            string data = puerto_serie.ReadLine();
- 
-            this.BeginInvoke(new SetTextDeleg(si_DataReceived), new object[] { data });
+         
         }
 
         private delegate void SetTextDeleg(string text);
@@ -195,18 +228,42 @@ namespace Neumavalid
             if (puerto_serie != null && puerto_serie.IsOpen)
             {
                 puerto_serie.Close();
+                    
             }
 
             int nroensayo =Convert.ToInt32( cmbNumEnsayo.Value);
 
             if (ListaMediciones.Count > 0)
             {
+
+                //verifico que el nro de ensayo no exista sino remplazo
+                Ensayo existe = ListaEnsayos.Where(x => x.nroEnsayo == nroensayo).FirstOrDefault();
+                if (existe!=null)
+                {
+                    ListaEnsayos.Remove(existe);
+                    foreach(ListViewItem itemlv in lstEnsayos2.Items)
+                    {
+                        if (itemlv.SubItems[0].Text== cmbNumEnsayo.Value.ToString())
+                        {
+                            lstEnsayos2.Items.Remove(itemlv);
+                        }
+                    }
+                }
+
                 ListaEnsayos.Add(new Ensayo(nroensayo, ListaMediciones[ListaMediciones.Count - 1]));
+            
+                ListViewItem item = new ListViewItem();
+                item.SubItems.Clear();
+                item.SubItems[0].Text = nroensayo.ToString();
+        
+                item.SubItems.Add(ListaMediciones[ListaMediciones.Count - 1].fechaToma.ToString());
+                item.SubItems.Add(ListaMediciones[ListaMediciones.Count - 1].valorToma.ToString());
+                lstEnsayos2.Items.Add(item);
+
+
+                chartLitros.Series[chartLitros.Series.Count - 1].Points.Clear() ;
             }
 
-
-            lstEnsayos.Items.Add(ListaEnsayos[ListaEnsayos.Count-1]);
-        
         }
         private void btnalatabla_Click(object sender, EventArgs e)
         {
@@ -447,6 +504,78 @@ namespace Neumavalid
         private void iconButton2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void lstEnsayos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void managedVScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void lstEnsayos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Borrardatos_Click(object sender, EventArgs e)
+        {
+            lstEnsayos2.Items.Clear();
+
+        }
+
+        private void cmbNdeserie_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+  
+
+        private void lstEnsayos2_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            
+            lstEnsayos2.FullRowSelect = true;
+            CalcularMetricas();
+        }
+
+
+
+        private void CalcularMetricas()
+        {
+            double promedio = 0;//promedio de todos los seleccionados
+            double desvio = 0;//
+            double coeficiente = 0;
+            List<String> Items = new List<string>();
+            foreach (ListViewItem item in lstEnsayos2.CheckedItems)
+            {
+                ListViewItem a = item;
+                Items.Add(a.SubItems[2].Text);
+
+            }
+
+            promedio = calcular_media(Items);
+            desvio = calcular_desviacion(Items);
+            coeficiente = calcular_coeficiente(desvio, promedio);
+
+            lblCoeficiente.Text = coeficiente.ToString("F2");
+            lblDesvio.Text = desvio.ToString("F2");
+            lblPromedio.Text = promedio.ToString("F2");
+        }
+
+        
+       
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CalcularMetricas();
         }
     }
 

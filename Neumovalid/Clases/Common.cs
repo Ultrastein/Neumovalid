@@ -65,5 +65,71 @@ namespace Neumavalid.Clases
             }
 
         }
+
+
+        public static double calcular_desviacion(List<String> Items)
+        {
+            double datos_m = 0;
+            //calcular media
+            for (int i = 0; i < Items.Count; ++i)
+            {
+                datos_m += Convert.ToDouble(Items[i].ToString());
+            }
+            var tamano_muestra = Items.Count;
+            var media = datos_m / tamano_muestra;
+           
+            //calcular varianza
+            double datos_v = 0;
+            for (int i = 0; i < Items.Count; ++i)
+            {
+                //conversion explicita a double para emplear el metodo pow
+                datos_v += Math.Pow((Convert.ToDouble(Items[i].ToString()) - Convert.ToDouble(media)), 2); ;
+            }
+            var total_varianza = datos_v / (Items.Count - 1);
+
+            if (Items.Count > 0 && datos_v>0)
+            {
+
+                return Math.Sqrt(total_varianza);
+
+            }
+            else { return 0; }
+        }
+        public static double calcular_media(List<String> Items)
+        {
+            double datos_m = 0;
+            //calcular media
+            for (int i = 0; i < Items.Count; ++i)
+            {
+                datos_m += Convert.ToDouble(Items[i].ToString());
+            }
+          
+            var tamano_muestra = Items.Count;
+            var media = datos_m / tamano_muestra;
+           if (Items.Count > 0)
+            {
+
+                return media;
+
+            }
+            else
+            {
+
+                return 0;
+
+            }
+        }
+        public static double calcular_coeficiente(double desvio, double promedio)
+        {
+            double resultado = 0;
+
+            if (desvio > 0 && promedio>0)
+            {
+                resultado = (desvio / promedio) * 100;
+            }
+
+            return resultado;
+
+        }
     }
 }

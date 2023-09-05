@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            CodeArtEng.Gauge.Themes.ThemeColors themeColors1 = new CodeArtEng.Gauge.Themes.ThemeColors();
-            CodeArtEng.Gauge.Themes.ThemeColors themeColors2 = new CodeArtEng.Gauge.Themes.ThemeColors();
-            CodeArtEng.Gauge.Themes.ThemeColors themeColors3 = new CodeArtEng.Gauge.Themes.ThemeColors();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            CodeArtEng.Gauge.Themes.ThemeColors themeColors4 = new CodeArtEng.Gauge.Themes.ThemeColors();
+            CodeArtEng.Gauge.Themes.ThemeColors themeColors5 = new CodeArtEng.Gauge.Themes.ThemeColors();
+            CodeArtEng.Gauge.Themes.ThemeColors themeColors6 = new CodeArtEng.Gauge.Themes.ThemeColors();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.pnlDerecho = new System.Windows.Forms.Panel();
             this.Borrardatos = new FontAwesome.Sharp.IconButton();
             this.Ndeensayo = new System.Windows.Forms.GroupBox();
@@ -45,30 +45,16 @@
             this.btnDetener = new FontAwesome.Sharp.IconButton();
             this.btnIniciar = new FontAwesome.Sharp.IconButton();
             this.pnlFormulario = new System.Windows.Forms.Panel();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.lblCoeficiente = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lblDesvio = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lblPromedio = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lstEnsayos2 = new System.Windows.Forms.ListView();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.cmbpropieterio = new System.Windows.Forms.ComboBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.Ndeensayo21 = new System.Windows.Forms.CheckedListBox();
-            this.Ndeensayo20 = new System.Windows.Forms.CheckedListBox();
-            this.Ndeensayo14 = new System.Windows.Forms.CheckedListBox();
-            this.Ndeensayo13 = new System.Windows.Forms.CheckedListBox();
-            this.Ndeensayo7 = new System.Windows.Forms.CheckedListBox();
-            this.Ndeensayo6 = new System.Windows.Forms.CheckedListBox();
-            this.Ndeensayo19 = new System.Windows.Forms.CheckedListBox();
-            this.Ndeensayo18 = new System.Windows.Forms.CheckedListBox();
-            this.Ndeensayo17 = new System.Windows.Forms.CheckedListBox();
-            this.Ndeensayo16 = new System.Windows.Forms.CheckedListBox();
-            this.Ndeensayo15 = new System.Windows.Forms.CheckedListBox();
-            this.Ndeensayo12 = new System.Windows.Forms.CheckedListBox();
-            this.Ndeensayo11 = new System.Windows.Forms.CheckedListBox();
-            this.Ndeensayo10 = new System.Windows.Forms.CheckedListBox();
-            this.Ndeensayo9 = new System.Windows.Forms.CheckedListBox();
-            this.Ndeensayo8 = new System.Windows.Forms.CheckedListBox();
-            this.Ndeensayo5 = new System.Windows.Forms.CheckedListBox();
-            this.Ndeensayo4 = new System.Windows.Forms.CheckedListBox();
-            this.Ndeensayo3 = new System.Windows.Forms.CheckedListBox();
-            this.Ndeensayo2 = new System.Windows.Forms.CheckedListBox();
-            this.Ndeensayo1 = new System.Windows.Forms.CheckedListBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.cmbComPort = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -91,14 +77,13 @@
             this.gaugeTemperatura = new CodeArtEng.Gauge.CircularGauge();
             this.grpSensores = new System.Windows.Forms.GroupBox();
             this.chartLitros = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.lstEnsayos = new System.Windows.Forms.ListBox();
+            this.btnCalcular = new System.Windows.Forms.Button();
             this.pnlDerecho.SuspendLayout();
             this.Ndeensayo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbNumEnsayo)).BeginInit();
             this.pnlFormulario.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
-            this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -106,7 +91,6 @@
             this.groupBox3.SuspendLayout();
             this.grpSensores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartLitros)).BeginInit();
-            this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlDerecho
@@ -147,6 +131,7 @@
             this.Borrardatos.Text = "Borrar datos de la tabla";
             this.Borrardatos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Borrardatos.UseVisualStyleBackColor = true;
+            this.Borrardatos.Click += new System.EventHandler(this.Borrardatos_Click);
             // 
             // Ndeensayo
             // 
@@ -349,7 +334,6 @@
             this.pnlFormulario.Controls.Add(this.groupBox8);
             this.pnlFormulario.Controls.Add(this.groupBox7);
             this.pnlFormulario.Controls.Add(this.pnlDerecho);
-            this.pnlFormulario.Controls.Add(this.groupBox6);
             this.pnlFormulario.Controls.Add(this.groupBox5);
             this.pnlFormulario.Controls.Add(this.groupBox1);
             this.pnlFormulario.Controls.Add(this.groupBox4);
@@ -364,7 +348,92 @@
             this.pnlFormulario.Name = "pnlFormulario";
             this.pnlFormulario.Size = new System.Drawing.Size(1152, 618);
             this.pnlFormulario.TabIndex = 2;
-            this.pnlFormulario.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlFormulario_Paint);
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.btnCalcular);
+            this.groupBox8.Controls.Add(this.lblCoeficiente);
+            this.groupBox8.Controls.Add(this.label12);
+            this.groupBox8.Controls.Add(this.lblDesvio);
+            this.groupBox8.Controls.Add(this.label10);
+            this.groupBox8.Controls.Add(this.lblPromedio);
+            this.groupBox8.Controls.Add(this.label7);
+            this.groupBox8.Controls.Add(this.lstEnsayos2);
+            this.groupBox8.ForeColor = System.Drawing.Color.Gainsboro;
+            this.groupBox8.Location = new System.Drawing.Point(492, 324);
+            this.groupBox8.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox8.Size = new System.Drawing.Size(440, 281);
+            this.groupBox8.TabIndex = 32;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Medicion Ensayos";
+            // 
+            // lblCoeficiente
+            // 
+            this.lblCoeficiente.AutoSize = true;
+            this.lblCoeficiente.Location = new System.Drawing.Point(226, 244);
+            this.lblCoeficiente.Name = "lblCoeficiente";
+            this.lblCoeficiente.Size = new System.Drawing.Size(19, 21);
+            this.lblCoeficiente.TabIndex = 7;
+            this.lblCoeficiente.Text = "0";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(7, 244);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(214, 21);
+            this.label12.TabIndex = 6;
+            this.label12.Text = "Coeficiente Variabilidad";
+            // 
+            // lblDesvio
+            // 
+            this.lblDesvio.AutoSize = true;
+            this.lblDesvio.Location = new System.Drawing.Point(226, 208);
+            this.lblDesvio.Name = "lblDesvio";
+            this.lblDesvio.Size = new System.Drawing.Size(19, 21);
+            this.lblDesvio.TabIndex = 5;
+            this.lblDesvio.Text = "0";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(8, 208);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(145, 21);
+            this.label10.TabIndex = 4;
+            this.label10.Text = "Desvio Estandar";
+            // 
+            // lblPromedio
+            // 
+            this.lblPromedio.AutoSize = true;
+            this.lblPromedio.Location = new System.Drawing.Point(375, 208);
+            this.lblPromedio.Name = "lblPromedio";
+            this.lblPromedio.Size = new System.Drawing.Size(19, 21);
+            this.lblPromedio.TabIndex = 3;
+            this.lblPromedio.Text = "0";
+            this.lblPromedio.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(272, 208);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(88, 21);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Promedio";
+            // 
+            // lstEnsayos2
+            // 
+            this.lstEnsayos2.CheckBoxes = true;
+            this.lstEnsayos2.HideSelection = false;
+            this.lstEnsayos2.Location = new System.Drawing.Point(7, 24);
+            this.lstEnsayos2.Name = "lstEnsayos2";
+            this.lstEnsayos2.Size = new System.Drawing.Size(425, 166);
+            this.lstEnsayos2.TabIndex = 1;
+            this.lstEnsayos2.UseCompatibleStateImageBehavior = false;
+            this.lstEnsayos2.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lstEnsayos2_ItemSelectionChanged);
             // 
             // groupBox7
             // 
@@ -378,7 +447,6 @@
             this.groupBox7.TabIndex = 30;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Dueño";
-            this.groupBox7.Enter += new System.EventHandler(this.groupBox7_Enter);
             // 
             // cmbpropieterio
             // 
@@ -389,231 +457,6 @@
             this.cmbpropieterio.Name = "cmbpropieterio";
             this.cmbpropieterio.Size = new System.Drawing.Size(196, 29);
             this.cmbpropieterio.TabIndex = 6;
-            this.cmbpropieterio.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.Ndeensayo21);
-            this.groupBox6.Controls.Add(this.Ndeensayo20);
-            this.groupBox6.Controls.Add(this.Ndeensayo14);
-            this.groupBox6.Controls.Add(this.Ndeensayo13);
-            this.groupBox6.Controls.Add(this.Ndeensayo7);
-            this.groupBox6.Controls.Add(this.Ndeensayo6);
-            this.groupBox6.Controls.Add(this.Ndeensayo19);
-            this.groupBox6.Controls.Add(this.Ndeensayo18);
-            this.groupBox6.Controls.Add(this.Ndeensayo17);
-            this.groupBox6.Controls.Add(this.Ndeensayo16);
-            this.groupBox6.Controls.Add(this.Ndeensayo15);
-            this.groupBox6.Controls.Add(this.Ndeensayo12);
-            this.groupBox6.Controls.Add(this.Ndeensayo11);
-            this.groupBox6.Controls.Add(this.Ndeensayo10);
-            this.groupBox6.Controls.Add(this.Ndeensayo9);
-            this.groupBox6.Controls.Add(this.Ndeensayo8);
-            this.groupBox6.Controls.Add(this.Ndeensayo5);
-            this.groupBox6.Controls.Add(this.Ndeensayo4);
-            this.groupBox6.Controls.Add(this.Ndeensayo3);
-            this.groupBox6.Controls.Add(this.Ndeensayo2);
-            this.groupBox6.Controls.Add(this.Ndeensayo1);
-            this.groupBox6.ForeColor = System.Drawing.Color.Gainsboro;
-            this.groupBox6.Location = new System.Drawing.Point(492, 577);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox6.Size = new System.Drawing.Size(433, 267);
-            this.groupBox6.TabIndex = 30;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Tabla";
-            this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
-            // 
-            // Ndeensayo21
-            // 
-            this.Ndeensayo21.FormattingEnabled = true;
-            this.Ndeensayo21.Location = new System.Drawing.Point(300, 233);
-            this.Ndeensayo21.Margin = new System.Windows.Forms.Padding(4);
-            this.Ndeensayo21.Name = "Ndeensayo21";
-            this.Ndeensayo21.Size = new System.Drawing.Size(124, 26);
-            this.Ndeensayo21.TabIndex = 20;
-            // 
-            // Ndeensayo20
-            // 
-            this.Ndeensayo20.FormattingEnabled = true;
-            this.Ndeensayo20.Location = new System.Drawing.Point(300, 199);
-            this.Ndeensayo20.Margin = new System.Windows.Forms.Padding(4);
-            this.Ndeensayo20.Name = "Ndeensayo20";
-            this.Ndeensayo20.Size = new System.Drawing.Size(124, 26);
-            this.Ndeensayo20.TabIndex = 19;
-            // 
-            // Ndeensayo14
-            // 
-            this.Ndeensayo14.FormattingEnabled = true;
-            this.Ndeensayo14.Location = new System.Drawing.Point(161, 233);
-            this.Ndeensayo14.Margin = new System.Windows.Forms.Padding(4);
-            this.Ndeensayo14.Name = "Ndeensayo14";
-            this.Ndeensayo14.Size = new System.Drawing.Size(124, 26);
-            this.Ndeensayo14.TabIndex = 18;
-            // 
-            // Ndeensayo13
-            // 
-            this.Ndeensayo13.FormattingEnabled = true;
-            this.Ndeensayo13.Location = new System.Drawing.Point(161, 199);
-            this.Ndeensayo13.Margin = new System.Windows.Forms.Padding(4);
-            this.Ndeensayo13.Name = "Ndeensayo13";
-            this.Ndeensayo13.Size = new System.Drawing.Size(124, 26);
-            this.Ndeensayo13.TabIndex = 17;
-            // 
-            // Ndeensayo7
-            // 
-            this.Ndeensayo7.FormattingEnabled = true;
-            this.Ndeensayo7.Location = new System.Drawing.Point(20, 233);
-            this.Ndeensayo7.Margin = new System.Windows.Forms.Padding(4);
-            this.Ndeensayo7.Name = "Ndeensayo7";
-            this.Ndeensayo7.Size = new System.Drawing.Size(124, 26);
-            this.Ndeensayo7.TabIndex = 16;
-            // 
-            // Ndeensayo6
-            // 
-            this.Ndeensayo6.FormattingEnabled = true;
-            this.Ndeensayo6.Location = new System.Drawing.Point(20, 199);
-            this.Ndeensayo6.Margin = new System.Windows.Forms.Padding(4);
-            this.Ndeensayo6.Name = "Ndeensayo6";
-            this.Ndeensayo6.Size = new System.Drawing.Size(124, 26);
-            this.Ndeensayo6.TabIndex = 15;
-            // 
-            // Ndeensayo19
-            // 
-            this.Ndeensayo19.FormattingEnabled = true;
-            this.Ndeensayo19.Location = new System.Drawing.Point(300, 165);
-            this.Ndeensayo19.Margin = new System.Windows.Forms.Padding(4);
-            this.Ndeensayo19.Name = "Ndeensayo19";
-            this.Ndeensayo19.Size = new System.Drawing.Size(124, 26);
-            this.Ndeensayo19.TabIndex = 14;
-            // 
-            // Ndeensayo18
-            // 
-            this.Ndeensayo18.FormattingEnabled = true;
-            this.Ndeensayo18.Location = new System.Drawing.Point(300, 130);
-            this.Ndeensayo18.Margin = new System.Windows.Forms.Padding(4);
-            this.Ndeensayo18.Name = "Ndeensayo18";
-            this.Ndeensayo18.Size = new System.Drawing.Size(124, 26);
-            this.Ndeensayo18.TabIndex = 13;
-            // 
-            // Ndeensayo17
-            // 
-            this.Ndeensayo17.FormattingEnabled = true;
-            this.Ndeensayo17.Location = new System.Drawing.Point(300, 96);
-            this.Ndeensayo17.Margin = new System.Windows.Forms.Padding(4);
-            this.Ndeensayo17.Name = "Ndeensayo17";
-            this.Ndeensayo17.Size = new System.Drawing.Size(124, 26);
-            this.Ndeensayo17.TabIndex = 12;
-            // 
-            // Ndeensayo16
-            // 
-            this.Ndeensayo16.FormattingEnabled = true;
-            this.Ndeensayo16.Location = new System.Drawing.Point(300, 62);
-            this.Ndeensayo16.Margin = new System.Windows.Forms.Padding(4);
-            this.Ndeensayo16.Name = "Ndeensayo16";
-            this.Ndeensayo16.Size = new System.Drawing.Size(124, 26);
-            this.Ndeensayo16.TabIndex = 11;
-            // 
-            // Ndeensayo15
-            // 
-            this.Ndeensayo15.FormattingEnabled = true;
-            this.Ndeensayo15.Location = new System.Drawing.Point(300, 27);
-            this.Ndeensayo15.Margin = new System.Windows.Forms.Padding(4);
-            this.Ndeensayo15.Name = "Ndeensayo15";
-            this.Ndeensayo15.Size = new System.Drawing.Size(124, 26);
-            this.Ndeensayo15.TabIndex = 10;
-            // 
-            // Ndeensayo12
-            // 
-            this.Ndeensayo12.FormattingEnabled = true;
-            this.Ndeensayo12.Location = new System.Drawing.Point(161, 165);
-            this.Ndeensayo12.Margin = new System.Windows.Forms.Padding(4);
-            this.Ndeensayo12.Name = "Ndeensayo12";
-            this.Ndeensayo12.Size = new System.Drawing.Size(124, 26);
-            this.Ndeensayo12.TabIndex = 9;
-            // 
-            // Ndeensayo11
-            // 
-            this.Ndeensayo11.FormattingEnabled = true;
-            this.Ndeensayo11.Location = new System.Drawing.Point(161, 130);
-            this.Ndeensayo11.Margin = new System.Windows.Forms.Padding(4);
-            this.Ndeensayo11.Name = "Ndeensayo11";
-            this.Ndeensayo11.Size = new System.Drawing.Size(124, 26);
-            this.Ndeensayo11.TabIndex = 8;
-            // 
-            // Ndeensayo10
-            // 
-            this.Ndeensayo10.FormattingEnabled = true;
-            this.Ndeensayo10.Location = new System.Drawing.Point(161, 96);
-            this.Ndeensayo10.Margin = new System.Windows.Forms.Padding(4);
-            this.Ndeensayo10.Name = "Ndeensayo10";
-            this.Ndeensayo10.Size = new System.Drawing.Size(124, 26);
-            this.Ndeensayo10.TabIndex = 7;
-            // 
-            // Ndeensayo9
-            // 
-            this.Ndeensayo9.FormattingEnabled = true;
-            this.Ndeensayo9.Location = new System.Drawing.Point(161, 62);
-            this.Ndeensayo9.Margin = new System.Windows.Forms.Padding(4);
-            this.Ndeensayo9.Name = "Ndeensayo9";
-            this.Ndeensayo9.Size = new System.Drawing.Size(124, 26);
-            this.Ndeensayo9.TabIndex = 6;
-            // 
-            // Ndeensayo8
-            // 
-            this.Ndeensayo8.FormattingEnabled = true;
-            this.Ndeensayo8.Location = new System.Drawing.Point(161, 27);
-            this.Ndeensayo8.Margin = new System.Windows.Forms.Padding(4);
-            this.Ndeensayo8.Name = "Ndeensayo8";
-            this.Ndeensayo8.Size = new System.Drawing.Size(124, 26);
-            this.Ndeensayo8.TabIndex = 5;
-            // 
-            // Ndeensayo5
-            // 
-            this.Ndeensayo5.FormattingEnabled = true;
-            this.Ndeensayo5.Location = new System.Drawing.Point(20, 165);
-            this.Ndeensayo5.Margin = new System.Windows.Forms.Padding(4);
-            this.Ndeensayo5.Name = "Ndeensayo5";
-            this.Ndeensayo5.Size = new System.Drawing.Size(124, 26);
-            this.Ndeensayo5.TabIndex = 4;
-            // 
-            // Ndeensayo4
-            // 
-            this.Ndeensayo4.FormattingEnabled = true;
-            this.Ndeensayo4.Location = new System.Drawing.Point(20, 130);
-            this.Ndeensayo4.Margin = new System.Windows.Forms.Padding(4);
-            this.Ndeensayo4.Name = "Ndeensayo4";
-            this.Ndeensayo4.Size = new System.Drawing.Size(124, 26);
-            this.Ndeensayo4.TabIndex = 3;
-            // 
-            // Ndeensayo3
-            // 
-            this.Ndeensayo3.FormattingEnabled = true;
-            this.Ndeensayo3.Location = new System.Drawing.Point(20, 96);
-            this.Ndeensayo3.Margin = new System.Windows.Forms.Padding(4);
-            this.Ndeensayo3.Name = "Ndeensayo3";
-            this.Ndeensayo3.Size = new System.Drawing.Size(124, 26);
-            this.Ndeensayo3.TabIndex = 2;
-            // 
-            // Ndeensayo2
-            // 
-            this.Ndeensayo2.FormattingEnabled = true;
-            this.Ndeensayo2.Location = new System.Drawing.Point(20, 62);
-            this.Ndeensayo2.Margin = new System.Windows.Forms.Padding(4);
-            this.Ndeensayo2.Name = "Ndeensayo2";
-            this.Ndeensayo2.Size = new System.Drawing.Size(124, 26);
-            this.Ndeensayo2.TabIndex = 1;
-            // 
-            // Ndeensayo1
-            // 
-            this.Ndeensayo1.FormattingEnabled = true;
-            this.Ndeensayo1.Location = new System.Drawing.Point(20, 27);
-            this.Ndeensayo1.Margin = new System.Windows.Forms.Padding(4);
-            this.Ndeensayo1.Name = "Ndeensayo1";
-            this.Ndeensayo1.Size = new System.Drawing.Size(124, 26);
-            this.Ndeensayo1.TabIndex = 0;
-            this.Ndeensayo1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
             // groupBox5
             // 
@@ -675,7 +518,7 @@
             this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox4.Size = new System.Drawing.Size(916, 121);
+            this.groupBox4.Size = new System.Drawing.Size(916, 107);
             this.groupBox4.TabIndex = 30;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Jeringa";
@@ -694,11 +537,12 @@
             // 
             this.cmbNdeserie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbNdeserie.FormattingEnabled = true;
-            this.cmbNdeserie.Location = new System.Drawing.Point(293, 84);
+            this.cmbNdeserie.Location = new System.Drawing.Point(294, 66);
             this.cmbNdeserie.Margin = new System.Windows.Forms.Padding(4);
             this.cmbNdeserie.Name = "cmbNdeserie";
             this.cmbNdeserie.Size = new System.Drawing.Size(377, 29);
             this.cmbNdeserie.TabIndex = 11;
+            this.cmbNdeserie.SelectedIndexChanged += new System.EventHandler(this.cmbNdeserie_SelectedIndexChanged);
             // 
             // cmbmarca
             // 
@@ -713,13 +557,12 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(187, 82);
+            this.label5.Location = new System.Drawing.Point(187, 69);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(99, 21);
             this.label5.TabIndex = 9;
             this.label5.Text = "Nº de serie";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
@@ -828,11 +671,11 @@
             this.gaugePresion.Theme = CodeArtEng.Gauge.GaugeTheme.Dark;
             this.gaugePresion.Title = "";
             this.gaugePresion.Unit = "bar";
-            this.gaugePresion.UserDefinedColors.Base = themeColors1;
-            themeColors2.PointerColor = System.Drawing.Color.Red;
-            this.gaugePresion.UserDefinedColors.Error = themeColors2;
-            themeColors3.PointerColor = System.Drawing.Color.Orange;
-            this.gaugePresion.UserDefinedColors.Warning = themeColors3;
+            this.gaugePresion.UserDefinedColors.Base = themeColors4;
+            themeColors5.PointerColor = System.Drawing.Color.Red;
+            this.gaugePresion.UserDefinedColors.Error = themeColors5;
+            themeColors6.PointerColor = System.Drawing.Color.Orange;
+            this.gaugePresion.UserDefinedColors.Warning = themeColors6;
             this.gaugePresion.Value = 0D;
             // 
             // gaugeHumedad
@@ -878,11 +721,11 @@
             // 
             this.grpSensores.Controls.Add(this.chartLitros);
             this.grpSensores.ForeColor = System.Drawing.Color.Gainsboro;
-            this.grpSensores.Location = new System.Drawing.Point(16, 338);
+            this.grpSensores.Location = new System.Drawing.Point(16, 324);
             this.grpSensores.Margin = new System.Windows.Forms.Padding(4);
             this.grpSensores.Name = "grpSensores";
             this.grpSensores.Padding = new System.Windows.Forms.Padding(4);
-            this.grpSensores.Size = new System.Drawing.Size(468, 267);
+            this.grpSensores.Size = new System.Drawing.Size(468, 281);
             this.grpSensores.TabIndex = 14;
             this.grpSensores.TabStop = false;
             this.grpSensores.Text = "Lecturas sensor";
@@ -890,66 +733,54 @@
             // chartLitros
             // 
             this.chartLitros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            chartArea1.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle;
-            chartArea1.AxisX.IsLabelAutoFit = false;
-            chartArea1.AxisX.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea1.AxisX.LabelStyle.ForeColor = System.Drawing.Color.Cornsilk;
-            chartArea1.AxisX.LineColor = System.Drawing.Color.Cornsilk;
-            chartArea1.AxisX.MajorGrid.Enabled = false;
-            chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.Cornsilk;
-            chartArea1.AxisX.MajorTickMark.LineColor = System.Drawing.Color.Cornsilk;
-            chartArea1.AxisX.TitleFont = new System.Drawing.Font("Century Gothic", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea1.AxisX2.TitleFont = new System.Drawing.Font("Century Gothic", 6F);
-            chartArea1.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle;
-            chartArea1.AxisY.IsLabelAutoFit = false;
-            chartArea1.AxisY.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea1.AxisY.LabelStyle.ForeColor = System.Drawing.Color.Cornsilk;
-            chartArea1.AxisY.LineColor = System.Drawing.Color.Cornsilk;
-            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.Cornsilk;
-            chartArea1.AxisY.MajorTickMark.LineColor = System.Drawing.Color.Cornsilk;
-            chartArea1.AxisY.Minimum = 0D;
-            chartArea1.AxisY.TitleFont = new System.Drawing.Font("Century Gothic", 6F);
-            chartArea1.AxisY2.TitleFont = new System.Drawing.Font("Century Gothic", 6F);
-            chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            chartArea1.Name = "ChartArea1";
-            this.chartLitros.ChartAreas.Add(chartArea1);
+            chartArea2.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle;
+            chartArea2.AxisX.IsLabelAutoFit = false;
+            chartArea2.AxisX.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea2.AxisX.LabelStyle.ForeColor = System.Drawing.Color.Cornsilk;
+            chartArea2.AxisX.LineColor = System.Drawing.Color.Cornsilk;
+            chartArea2.AxisX.MajorGrid.Enabled = false;
+            chartArea2.AxisX.MajorGrid.LineColor = System.Drawing.Color.Cornsilk;
+            chartArea2.AxisX.MajorTickMark.LineColor = System.Drawing.Color.Cornsilk;
+            chartArea2.AxisX.TitleFont = new System.Drawing.Font("Century Gothic", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea2.AxisX2.TitleFont = new System.Drawing.Font("Century Gothic", 6F);
+            chartArea2.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle;
+            chartArea2.AxisY.IsLabelAutoFit = false;
+            chartArea2.AxisY.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea2.AxisY.LabelStyle.ForeColor = System.Drawing.Color.Cornsilk;
+            chartArea2.AxisY.LineColor = System.Drawing.Color.Cornsilk;
+            chartArea2.AxisY.MajorGrid.LineColor = System.Drawing.Color.Cornsilk;
+            chartArea2.AxisY.MajorTickMark.LineColor = System.Drawing.Color.Cornsilk;
+            chartArea2.AxisY.Minimum = 0D;
+            chartArea2.AxisY.TitleFont = new System.Drawing.Font("Century Gothic", 6F);
+            chartArea2.AxisY2.TitleFont = new System.Drawing.Font("Century Gothic", 6F);
+            chartArea2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            chartArea2.Name = "ChartArea1";
+            this.chartLitros.ChartAreas.Add(chartArea2);
             this.chartLitros.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartLitros.Location = new System.Drawing.Point(4, 24);
             this.chartLitros.Margin = new System.Windows.Forms.Padding(4);
             this.chartLitros.Name = "chartLitros";
-            series1.BorderWidth = 2;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Color = System.Drawing.Color.Cyan;
-            series1.Font = new System.Drawing.Font("Century Gothic", 6F);
-            series1.Name = "Series1";
-            this.chartLitros.Series.Add(series1);
-            this.chartLitros.Size = new System.Drawing.Size(460, 239);
+            series2.BorderWidth = 2;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Color = System.Drawing.Color.Cyan;
+            series2.Font = new System.Drawing.Font("Century Gothic", 6F);
+            series2.Name = "Series1";
+            this.chartLitros.Series.Add(series2);
+            this.chartLitros.Size = new System.Drawing.Size(460, 253);
             this.chartLitros.TabIndex = 29;
             this.chartLitros.Text = "chart4";
-            this.chartLitros.Click += new System.EventHandler(this.chartLitros_Click);
             // 
-            // groupBox8
+            // btnCalcular
             // 
-            this.groupBox8.Controls.Add(this.lstEnsayos);
-            this.groupBox8.ForeColor = System.Drawing.Color.Gainsboro;
-            this.groupBox8.Location = new System.Drawing.Point(492, 338);
-            this.groupBox8.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox8.Size = new System.Drawing.Size(440, 231);
-            this.groupBox8.TabIndex = 32;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Medicion Ensayos";
-            // 
-            // lstEnsayos
-            // 
-            this.lstEnsayos.FormattingEnabled = true;
-            this.lstEnsayos.ItemHeight = 21;
-            this.lstEnsayos.Location = new System.Drawing.Point(12, 28);
-            this.lstEnsayos.Name = "lstEnsayos";
-            this.lstEnsayos.Size = new System.Drawing.Size(412, 193);
-            this.lstEnsayos.TabIndex = 0;
+            this.btnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCalcular.Location = new System.Drawing.Point(276, 232);
+            this.btnCalcular.Name = "btnCalcular";
+            this.btnCalcular.Size = new System.Drawing.Size(129, 35);
+            this.btnCalcular.TabIndex = 8;
+            this.btnCalcular.Text = "Calcular";
+            this.btnCalcular.UseVisualStyleBackColor = true;
+            this.btnCalcular.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmMedidores
             // 
@@ -967,8 +798,9 @@
             this.Ndeensayo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cmbNumEnsayo)).EndInit();
             this.pnlFormulario.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
             this.groupBox7.ResumeLayout(false);
-            this.groupBox6.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -979,7 +811,6 @@
             this.groupBox3.PerformLayout();
             this.grpSensores.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartLitros)).EndInit();
-            this.groupBox8.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1008,7 +839,6 @@
         private FontAwesome.Sharp.IconButton btnStartEmulador;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.ComboBox cmbComPort;
-        private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.GroupBox grpSensores;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartLitros;
         private System.Windows.Forms.GroupBox groupBox7;
@@ -1020,31 +850,17 @@
         private System.Windows.Forms.ComboBox cmbmarca;
         private System.Windows.Forms.GroupBox Ndeensayo;
         private System.Windows.Forms.NumericUpDown cmbNumEnsayo;
-        private System.Windows.Forms.CheckedListBox Ndeensayo1;
-        private System.Windows.Forms.CheckedListBox Ndeensayo5;
-        private System.Windows.Forms.CheckedListBox Ndeensayo4;
-        private System.Windows.Forms.CheckedListBox Ndeensayo3;
-        private System.Windows.Forms.CheckedListBox Ndeensayo2;
-        private System.Windows.Forms.CheckedListBox Ndeensayo21;
-        private System.Windows.Forms.CheckedListBox Ndeensayo20;
-        private System.Windows.Forms.CheckedListBox Ndeensayo14;
-        private System.Windows.Forms.CheckedListBox Ndeensayo13;
-        private System.Windows.Forms.CheckedListBox Ndeensayo7;
-        private System.Windows.Forms.CheckedListBox Ndeensayo6;
-        private System.Windows.Forms.CheckedListBox Ndeensayo19;
-        private System.Windows.Forms.CheckedListBox Ndeensayo18;
-        private System.Windows.Forms.CheckedListBox Ndeensayo17;
-        private System.Windows.Forms.CheckedListBox Ndeensayo16;
-        private System.Windows.Forms.CheckedListBox Ndeensayo15;
-        private System.Windows.Forms.CheckedListBox Ndeensayo12;
-        private System.Windows.Forms.CheckedListBox Ndeensayo11;
-        private System.Windows.Forms.CheckedListBox Ndeensayo10;
-        private System.Windows.Forms.CheckedListBox Ndeensayo9;
-        private System.Windows.Forms.CheckedListBox Ndeensayo8;
         private FontAwesome.Sharp.IconButton Borrardatos;
         private System.Windows.Forms.Panel pnlDerecho;
         private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.ListBox lstEnsayos;
+        private System.Windows.Forms.ListView lstEnsayos2;
+        private System.Windows.Forms.Label lblCoeficiente;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblDesvio;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblPromedio;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnCalcular;
     }
 }

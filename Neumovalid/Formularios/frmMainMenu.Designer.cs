@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainMenu));
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.Calcular = new FontAwesome.Sharp.IconButton();
             this.btnSalir = new FontAwesome.Sharp.IconButton();
             this.btnSetting = new FontAwesome.Sharp.IconButton();
             this.btnMediciones = new FontAwesome.Sharp.IconButton();
@@ -55,7 +54,6 @@
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.panelMenu.Controls.Add(this.btnSalir);
-            this.panelMenu.Controls.Add(this.Calcular);
             this.panelMenu.Controls.Add(this.btnSetting);
             this.panelMenu.Controls.Add(this.btnMediciones);
             this.panelMenu.Controls.Add(this.panel1);
@@ -66,28 +64,6 @@
             this.panelMenu.Size = new System.Drawing.Size(293, 721);
             this.panelMenu.TabIndex = 0;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
-            // 
-            // Calcular
-            // 
-            this.Calcular.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Calcular.FlatAppearance.BorderSize = 0;
-            this.Calcular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Calcular.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Calcular.ForeColor = System.Drawing.Color.Gainsboro;
-            this.Calcular.IconChar = FontAwesome.Sharp.IconChar.Calculator;
-            this.Calcular.IconColor = System.Drawing.Color.Gainsboro;
-            this.Calcular.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Calcular.IconSize = 32;
-            this.Calcular.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Calcular.Location = new System.Drawing.Point(0, 271);
-            this.Calcular.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Calcular.Name = "Calcular";
-            this.Calcular.Size = new System.Drawing.Size(293, 74);
-            this.Calcular.TabIndex = 5;
-            this.Calcular.Text = "calcular";
-            this.Calcular.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Calcular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Calcular.UseVisualStyleBackColor = true;
             // 
             // btnSalir
             // 
@@ -101,8 +77,8 @@
             this.btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSalir.IconSize = 32;
             this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalir.Location = new System.Drawing.Point(0, 345);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalir.Location = new System.Drawing.Point(0, 271);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(293, 74);
             this.btnSalir.TabIndex = 4;
@@ -125,7 +101,7 @@
             this.btnSetting.IconSize = 32;
             this.btnSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSetting.Location = new System.Drawing.Point(0, 197);
-            this.btnSetting.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSetting.Margin = new System.Windows.Forms.Padding(4);
             this.btnSetting.Name = "btnSetting";
             this.btnSetting.Size = new System.Drawing.Size(293, 74);
             this.btnSetting.TabIndex = 2;
@@ -148,7 +124,7 @@
             this.btnMediciones.IconSize = 32;
             this.btnMediciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMediciones.Location = new System.Drawing.Point(0, 123);
-            this.btnMediciones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMediciones.Margin = new System.Windows.Forms.Padding(4);
             this.btnMediciones.Name = "btnMediciones";
             this.btnMediciones.Size = new System.Drawing.Size(293, 74);
             this.btnMediciones.TabIndex = 1;
@@ -163,7 +139,7 @@
             this.panel1.Controls.Add(this.btnHome);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(293, 123);
             this.panel1.TabIndex = 0;
@@ -173,7 +149,7 @@
             // 
             this.btnHome.Image = global::Neumavalid.Properties.Resources.Colegio_León_XIII_logo_escudo;
             this.btnHome.Location = new System.Drawing.Point(43, 15);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(4);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(193, 101);
             this.btnHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -188,7 +164,7 @@
             this.panelTitleBar.Controls.Add(this.iconCurrentChildForm);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(293, 0);
-            this.panelTitleBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelTitleBar.Margin = new System.Windows.Forms.Padding(4);
             this.panelTitleBar.Name = "panelTitleBar";
             this.panelTitleBar.Size = new System.Drawing.Size(1174, 92);
             this.panelTitleBar.TabIndex = 1;
@@ -215,7 +191,7 @@
             this.iconCurrentChildForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconCurrentChildForm.IconSize = 39;
             this.iconCurrentChildForm.Location = new System.Drawing.Point(23, 25);
-            this.iconCurrentChildForm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconCurrentChildForm.Margin = new System.Windows.Forms.Padding(4);
             this.iconCurrentChildForm.Name = "iconCurrentChildForm";
             this.iconCurrentChildForm.Size = new System.Drawing.Size(43, 39);
             this.iconCurrentChildForm.TabIndex = 0;
@@ -226,7 +202,7 @@
             this.panelShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
             this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelShadow.Location = new System.Drawing.Point(293, 92);
-            this.panelShadow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelShadow.Margin = new System.Windows.Forms.Padding(4);
             this.panelShadow.Name = "panelShadow";
             this.panelShadow.Size = new System.Drawing.Size(1174, 12);
             this.panelShadow.TabIndex = 2;
@@ -237,7 +213,7 @@
             this.panelDesktop.Controls.Add(this.pictureBox1);
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(293, 104);
-            this.panelDesktop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelDesktop.Margin = new System.Windows.Forms.Padding(4);
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(1174, 617);
             this.panelDesktop.TabIndex = 3;
@@ -247,7 +223,7 @@
             // 
             this.pictureBox1.Image = global::Neumavalid.Properties.Resources.NeumoValid1;
             this.pictureBox1.Location = new System.Drawing.Point(233, 59);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(664, 468);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -297,6 +273,5 @@
         private System.Windows.Forms.Panel panelShadow;
         private System.Windows.Forms.Panel panelDesktop;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private FontAwesome.Sharp.IconButton Calcular;
     }
 }
