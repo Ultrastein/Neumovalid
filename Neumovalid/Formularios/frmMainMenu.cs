@@ -17,6 +17,7 @@ using IniParser;
 using Color = System.Drawing.Color;
 using Neumavalid.Clases;
 using static Neumavalid.Clases.Common;
+using Microsoft.VisualBasic;
 
 namespace Neumavalid
 {
@@ -115,19 +116,34 @@ namespace Neumavalid
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-      
-        
-        
-     
-       
-   
+
+        private void btncalcular_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+
+
+
+
 
         private void btnSetting_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color3);
-            OpenChildForm(new frmConfiguracion());
-        }
+            String clave = "1234";
+            String mensaje = "Ingrese la Clave para habilitar la configuracion";
+            String valor = Interaction.InputBox(mensaje, "Clave", "" );
 
+            if (valor == clave)
+            {
+                ActivateButton(sender, RGBColors.color3);
+                OpenChildForm(new frmConfiguracion());
+
+            }
+            else {
+                Interaction.MsgBox("Clave Erronea");
+            }
+        }
+       
         private void btnMediciones_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);

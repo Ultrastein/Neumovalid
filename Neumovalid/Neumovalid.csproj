@@ -83,6 +83,7 @@
     <Reference Include="Microsoft.Extensions.Primitives, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Primitives.7.0.0\lib\net462\Microsoft.Extensions.Primitives.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -177,6 +178,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\Common.cs" />
+    <Compile Include="Clases\Entidades.cs" />
+    <Compile Include="Formularios\frmClave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmClave.Designer.cs">
+      <DependentUpon>frmClave.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmMedidores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +211,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\frmClave.resx">
+      <DependentUpon>frmClave.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmMedidores.resx">
       <DependentUpon>frmMedidores.cs</DependentUpon>
     </EmbeddedResource>
@@ -247,6 +258,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon-32x32.ico" />
+    <None Include="Resources\NeumoValid1.png" />
+    <None Include="Resources\NeumoValid.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

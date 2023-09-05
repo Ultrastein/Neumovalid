@@ -15,6 +15,8 @@ using static Neumavalid.Clases.Common;
 using System.IO.Ports;
 using System.IO;
 using System.Windows.Markup;
+using System.Globalization;
+using System.Runtime.CompilerServices;
 
 namespace Neumavalid
 {
@@ -34,7 +36,8 @@ namespace Neumavalid
         private Boolean chkEliminar_n = true;
         private Boolean chkEnviar_r = true;
         private Boolean chkEnviar_n = true;
-        private List<Tuple<int, string>> ListaMediciones =  new List<Tuple<int, string>>() ;
+        private List<Medicion> ListaMediciones =  new List<Medicion>() ;
+        private List<Ensayo> ListaEnsayos = new List<Ensayo>();
         public frmMedidores()
         {
             InitializeComponent();
@@ -46,6 +49,7 @@ namespace Neumavalid
         }
         private void InicializarValores()
         {
+            lblFecha.Text=DateTime.Now.ToShortDateString();
             string[] ports = SerialPort.GetPortNames();
             foreach (string port in ports)
             {
@@ -73,31 +77,58 @@ namespace Neumavalid
 
                 string Marcas = data["jeringa"]["marca"].ToUpper();
                 string Modelos  = data["jeringa"]["modelo"].ToUpper();
-                string Referentes = data["referente"]["personas"].ToUpper();
-
+                string Operador = data["referente"]["personas"].ToUpper();
+                string Propietario = data["jeringa"]["propietario"].ToUpper();
+                string Ndeserie = data["jeringa"]["nserie"].ToUpper();
                 cmbComPort.SelectedIndex = cmbComPort.FindStringExact(data["COM"]["Default"]);
 
                 List<string> list = new List<string>();
                 list = Marcas.Split(';').ToList();
-                cmbMarcas.Items.Clear();
-                cmbMarcas.Items.AddRange( list.ToArray());
-                if(cmbMarcas.Items.Count>0) cmbMarcas.SelectedIndex = 1;
+                cmbmarca.Items.Clear();
+                cmbmarca.Items.AddRange( list.ToArray());
+                if(cmbmarca.Items.Count>0) cmbmarca.SelectedIndex = 0;
 
                 list = new List<string>();
                 list = Modelos.Split(';').ToList();
-                cmbModelos.Items.Clear();
-                cmbModelos.Items.AddRange(list.ToArray());
-                if (cmbModelos.Items.Count > 0) cmbModelos.SelectedIndex = 1;
+                cmbmodelo.Items.Clear();
+                cmbmodelo.Items.AddRange(list.ToArray());
+                if (cmbmodelo.Items.Count > 0) cmbmodelo.SelectedIndex = 0;
 
                 list = new List<string>();
-                list = Referentes.Split(';').ToList();
-                cmbReferentes.Items.Clear();
-                cmbReferentes.Items.AddRange(list.ToArray());
-                if (cmbReferentes.Items.Count > 0) cmbReferentes.SelectedIndex = 1;
+                list = Operador.Split(';').ToList();
+                cmboperador.Items.Clear();
+                cmboperador.Items.AddRange(list.ToArray());
+                if (cmboperador.Items.Count > 0) cmboperador.SelectedIndex = 0;
 
+                //cosas nuevas//
+                list = new List<string>();
+                list = Propietario.Split(';').ToList();
+                cmbpropieterio.Items.Clear();
+                cmbpropieterio.Items.AddRange(list.ToArray());
+                if (cmbpropieterio.Items.Count > 0) cmbpropieterio.SelectedIndex = 0;
+
+                list = new List<string>();
+                list = Ndeserie.Split(';').ToList();
+                cmbNdeserie.Items.Clear();
+                cmbNdeserie.Items.AddRange(list.ToArray());
+                if (cmbNdeserie.Items.Count > 0) cmbNdeserie.SelectedIndex = 0;
+
+
+                ListaEnsayos = new List<Ensayo>();
+
+                lstEnsayos2.GridLines = true;// Whether the grid lines are displayed
+                lstEnsayos2.FullRowSelect = true;// Whether to select the entire line
+
+                lstEnsayos2.View = View.Details;// Set display mode
+                lstEnsayos2.Scrollable = true;// Whether to show the scroll bar automatically
+                lstEnsayos2.MultiSelect = false;// Is it possible to select multiple lines
+
+                // Add header(column)
 
                
-
+                lstEnsayos2.Columns.Add("Muestra", 70, HorizontalAlignment.Center);
+                lstEnsayos2.Columns.Add("Momento Toma", 200, HorizontalAlignment.Center);
+                lstEnsayos2.Columns.Add("Valor", 100, HorizontalAlignment.Center);
 
             }
             catch (Exception ex)
@@ -122,16 +153,35 @@ namespace Neumavalid
                 puerto_serie.Open();
 
             }
+            else
+            {
+                puerto_serie = null; 
+                string puerto = cmbComPort.GetItemText(this.cmbComPort.SelectedItem);
+                puerto_serie = new SerialPort(puerto, 115200); // colocar COM y baudrate corresp.
+                puerto_serie.ReadTimeout = 20;
+                puerto_serie.Handshake = Handshake.None;
+                puerto_serie.DataReceived += new SerialDataReceivedEventHandler(sp_DataReceived);
+                puerto_serie.WriteTimeout = 500;
+                puerto_serie.Close();
+                puerto_serie.Open();
+            }
 
         }
         private void sp_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
         {
 
+            try
+            {
+                string data = puerto_serie.ReadLine();
 
+                this.BeginInvoke(new SetTextDeleg(si_DataReceived), new object[] { data });
+            }
+            catch(Exception ex)
+            {
+
+            }
             //  Thread.Sleep(500);
-            string data = puerto_serie.ReadLine();
- 
-            this.BeginInvoke(new SetTextDeleg(si_DataReceived), new object[] { data });
+         
         }
 
         private delegate void SetTextDeleg(string text);
@@ -161,7 +211,9 @@ namespace Neumavalid
             else if (sensor == SensorVolumen)
             {
                 chartLitros.Series[chartLitros.Series.Count - 1].Points.AddXY(DateTime.Now.ToLongTimeString(), Convert.ToInt32(newValue));
-                ListaMediciones.Add(new Tuple<int, string>(Convert.ToInt32(newValue), DateTime.Now.ToLongDateString() + "::" + DateTime.Now.ToLongTimeString()));
+               // ListaMediciones.Add(new Tuple<int, string>(Convert.ToInt32(newValue), DateTime.Now.ToLongDateString() + "::" + DateTime.Now.ToLongTimeString()));
+
+                ListaMediciones.Add(new Medicion(DateTime.Now,Convert.ToDouble(newValue)));
 
             }
 
@@ -172,41 +224,91 @@ namespace Neumavalid
 
         private void btnDetener_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color3);
+         ActivateButton(sender, RGBColors.color3);
             if (puerto_serie != null && puerto_serie.IsOpen)
             {
                 puerto_serie.Close();
+                    
             }
-        }
 
+            int nroensayo =Convert.ToInt32( cmbNumEnsayo.Value);
+
+            if (ListaMediciones.Count > 0)
+            {
+
+                //verifico que el nro de ensayo no exista sino remplazo
+                Ensayo existe = ListaEnsayos.Where(x => x.nroEnsayo == nroensayo).FirstOrDefault();
+                if (existe!=null)
+                {
+                    ListaEnsayos.Remove(existe);
+                    foreach(ListViewItem itemlv in lstEnsayos2.Items)
+                    {
+                        if (itemlv.SubItems[0].Text== cmbNumEnsayo.Value.ToString())
+                        {
+                            lstEnsayos2.Items.Remove(itemlv);
+                        }
+                    }
+                }
+
+                ListaEnsayos.Add(new Ensayo(nroensayo, ListaMediciones[ListaMediciones.Count - 1]));
+            
+                ListViewItem item = new ListViewItem();
+                item.SubItems.Clear();
+                item.SubItems[0].Text = nroensayo.ToString();
+        
+                item.SubItems.Add(ListaMediciones[ListaMediciones.Count - 1].fechaToma.ToString());
+                item.SubItems.Add(ListaMediciones[ListaMediciones.Count - 1].valorToma.ToString());
+                lstEnsayos2.Items.Add(item);
+
+
+                chartLitros.Series[chartLitros.Series.Count - 1].Points.Clear() ;
+            }
+
+        }
+        private void btnalatabla_Click(object sender, EventArgs e)
+        {
+            
+        }
         private void btnExportar_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
 
 
             string contents = "";
-            contents += "Referente::" + cmbReferentes.SelectedItem.ToString() + "\n";
-            contents += "MArca Jeringa::" + cmbMarcas.SelectedItem.ToString() + "\n";
-            contents += "Modelo Jeringa::" + cmbModelos.SelectedItem.ToString() + "\n";
+            contents += "Leonxiii" + "\n";
+            contents += "Validacion de jeringa" + "\n";
+            contents += "Fecha::" + DateTime.Now.ToShortDateString()+ "\n";//imprime solo la fecha
+            contents += "Nº de ensayo::" + cmbNumEnsayo.Value.ToString() + "\n";
+            contents += "Operador::" + cmboperador.SelectedItem.ToString() + "\n";
+            contents += "propietario::" + cmbpropieterio.SelectedItem.ToString() + "\n";
+            contents += "Marca Jeringa::" + cmbmarca.SelectedItem.ToString() + "\n";
+            contents += "Modelo Jeringa::" + cmbmodelo.SelectedItem.ToString() + "\n";
+            contents += "Nº de serie::" + cmbNdeserie.SelectedItem.ToString() + "\n";
             contents += "Puerto::" + cmbComPort.SelectedItem.ToString() + "\n";
-
             contents += "Humedad::" + gaugeHumedad.Value.ToString() + "\n";
             contents += "Presion::" + gaugePresion.Value.ToString() + "\n";
             contents += "Temperatura::" + gaugeTemperatura.Value.ToString() + "\n";
 
-
-            contents += "Mediciones de Volumen\n";
-
-            if (ListaMediciones.Count>0)
-            {
-                foreach(var item in ListaMediciones)
-                {
-
-                    contents +=item.Item2.ToString() + ">" + item.Item1.ToString() + "\n";
-
-                }
+            if (ListaMediciones.Count > 0) {
+                contents += "Volumen::" + ListaMediciones[ListaMediciones.Count - 1].valorToma.ToString() + "\n";
+                
+            }
+            else {
+                contents += "Volumen::Sin Datos\n";
 
             }
+            //contents += "Mediciones de Volumen\n";
+
+            //if (ListaMediciones.Count>0)
+            //{
+            //    foreach(var item in ListaMediciones)
+            //    {
+
+            //        contents +=item.Item2.ToString() + ">" + item.Item1.ToString() + "\n";
+
+            //    }
+
+            //}
 
             contents += "\n";
             contents += "\n";
@@ -217,7 +319,7 @@ namespace Neumavalid
             Stream myStream;
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
 
-            saveFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            saveFileDialog1.Filter = "word files (*.docx)|*.docx|All files (*.*)|*.*";
             saveFileDialog1.FilterIndex = 2;
             saveFileDialog1.RestoreDirectory = true;
 
@@ -358,5 +460,123 @@ namespace Neumavalid
                 puerto_serie.Close();
             }
         }
+
+        private void groupBox6_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlFormulario_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void chartLitros_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox7_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbMarcas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lstEnsayos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void managedVScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void lstEnsayos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Borrardatos_Click(object sender, EventArgs e)
+        {
+            lstEnsayos2.Items.Clear();
+
+        }
+
+        private void cmbNdeserie_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+  
+
+        private void lstEnsayos2_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            
+            lstEnsayos2.FullRowSelect = true;
+            CalcularMetricas();
+        }
+
+
+
+        private void CalcularMetricas()
+        {
+            double promedio = 0;//promedio de todos los seleccionados
+            double desvio = 0;//
+            double coeficiente = 0;
+            List<String> Items = new List<string>();
+            foreach (ListViewItem item in lstEnsayos2.CheckedItems)
+            {
+                ListViewItem a = item;
+                Items.Add(a.SubItems[2].Text);
+
+            }
+
+            promedio = calcular_media(Items);
+            desvio = calcular_desviacion(Items);
+            coeficiente = calcular_coeficiente(desvio, promedio);
+
+            lblCoeficiente.Text = coeficiente.ToString("F2");
+            lblDesvio.Text = desvio.ToString("F2");
+            lblPromedio.Text = promedio.ToString("F2");
+        }
+
+        
+       
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CalcularMetricas();
+        }
     }
+
 }
