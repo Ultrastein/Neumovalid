@@ -196,24 +196,24 @@ namespace Neumavalid
              
             if (sensor == SensorHumedad)
             {
-                gaugeHumedad.Value = Convert.ToInt32(newValue);
+                gaugeHumedad.Value = Convert.ToDouble(newValue.Replace(".",","));
             }
             else if (sensor == SensorPresion)
             {
 
-                gaugePresion.Value = Convert.ToInt32(newValue);
+                gaugePresion.Value = Convert.ToDouble(newValue.Replace(".", ","));
             }
             else if(sensor == SensorTemperatura)
             {
 
-                gaugeTemperatura.Value = Convert.ToInt32(newValue);
+                gaugeTemperatura.Value = Convert.ToDouble(newValue.Replace(".", ","));
             }
             else if (sensor == SensorVolumen)
             {
                 chartLitros.Series[chartLitros.Series.Count - 1].Points.AddXY(DateTime.Now.ToLongTimeString(), Convert.ToInt32(newValue));
                // ListaMediciones.Add(new Tuple<int, string>(Convert.ToInt32(newValue), DateTime.Now.ToLongDateString() + "::" + DateTime.Now.ToLongTimeString()));
 
-                ListaMediciones.Add(new Medicion(DateTime.Now,Convert.ToDouble(newValue)));
+                ListaMediciones.Add(new Medicion(DateTime.Now,Convert.ToDouble(newValue.Replace(".",","))));
 
             }
 
@@ -297,6 +297,7 @@ namespace Neumavalid
                 contents += "Volumen::Sin Datos\n";
 
             }
+            contents += "comentarios::"+ txtcomentario.Text.ToString() + "\n";
             //contents += "Mediciones de Volumen\n";
 
             //if (ListaMediciones.Count>0)
@@ -576,6 +577,11 @@ namespace Neumavalid
         private void button1_Click(object sender, EventArgs e)
         {
             CalcularMetricas();
+        }
+
+        private void txtcomentario_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 

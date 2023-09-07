@@ -28,16 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            CodeArtEng.Gauge.Themes.ThemeColors themeColors4 = new CodeArtEng.Gauge.Themes.ThemeColors();
-            CodeArtEng.Gauge.Themes.ThemeColors themeColors5 = new CodeArtEng.Gauge.Themes.ThemeColors();
-            CodeArtEng.Gauge.Themes.ThemeColors themeColors6 = new CodeArtEng.Gauge.Themes.ThemeColors();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            CodeArtEng.Gauge.Themes.ThemeColors themeColors1 = new CodeArtEng.Gauge.Themes.ThemeColors();
+            CodeArtEng.Gauge.Themes.ThemeColors themeColors2 = new CodeArtEng.Gauge.Themes.ThemeColors();
+            CodeArtEng.Gauge.Themes.ThemeColors themeColors3 = new CodeArtEng.Gauge.Themes.ThemeColors();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.pnlDerecho = new System.Windows.Forms.Panel();
             this.Borrardatos = new FontAwesome.Sharp.IconButton();
             this.Ndeensayo = new System.Windows.Forms.GroupBox();
             this.cmbNumEnsayo = new System.Windows.Forms.NumericUpDown();
-            this.btnStartEmulador = new FontAwesome.Sharp.IconButton();
             this.btnEndManual = new FontAwesome.Sharp.IconButton();
             this.btnStartManual = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
@@ -46,6 +45,7 @@
             this.btnIniciar = new FontAwesome.Sharp.IconButton();
             this.pnlFormulario = new System.Windows.Forms.Panel();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.btnCalcular = new System.Windows.Forms.Button();
             this.lblCoeficiente = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.lblDesvio = new System.Windows.Forms.Label();
@@ -77,7 +77,8 @@
             this.gaugeTemperatura = new CodeArtEng.Gauge.CircularGauge();
             this.grpSensores = new System.Windows.Forms.GroupBox();
             this.chartLitros = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.btnCalcular = new System.Windows.Forms.Button();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.txtcomentario = new System.Windows.Forms.TextBox();
             this.pnlDerecho.SuspendLayout();
             this.Ndeensayo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbNumEnsayo)).BeginInit();
@@ -91,13 +92,14 @@
             this.groupBox3.SuspendLayout();
             this.grpSensores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartLitros)).BeginInit();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlDerecho
             // 
+            this.pnlDerecho.Controls.Add(this.btnCalcular);
             this.pnlDerecho.Controls.Add(this.Borrardatos);
             this.pnlDerecho.Controls.Add(this.Ndeensayo);
-            this.pnlDerecho.Controls.Add(this.btnStartEmulador);
             this.pnlDerecho.Controls.Add(this.btnEndManual);
             this.pnlDerecho.Controls.Add(this.btnStartManual);
             this.pnlDerecho.Controls.Add(this.iconButton1);
@@ -113,7 +115,6 @@
             // 
             // Borrardatos
             // 
-            this.Borrardatos.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Borrardatos.FlatAppearance.BorderSize = 0;
             this.Borrardatos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Borrardatos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -123,7 +124,7 @@
             this.Borrardatos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Borrardatos.IconSize = 32;
             this.Borrardatos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Borrardatos.Location = new System.Drawing.Point(0, 482);
+            this.Borrardatos.Location = new System.Drawing.Point(0, 406);
             this.Borrardatos.Margin = new System.Windows.Forms.Padding(4);
             this.Borrardatos.Name = "Borrardatos";
             this.Borrardatos.Size = new System.Drawing.Size(212, 81);
@@ -137,7 +138,7 @@
             // 
             this.Ndeensayo.Controls.Add(this.cmbNumEnsayo);
             this.Ndeensayo.ForeColor = System.Drawing.Color.Gainsboro;
-            this.Ndeensayo.Location = new System.Drawing.Point(7, 379);
+            this.Ndeensayo.Location = new System.Drawing.Point(10, 334);
             this.Ndeensayo.Margin = new System.Windows.Forms.Padding(4);
             this.Ndeensayo.Name = "Ndeensayo";
             this.Ndeensayo.Padding = new System.Windows.Forms.Padding(4);
@@ -170,29 +171,6 @@
             0,
             0,
             0});
-            // 
-            // btnStartEmulador
-            // 
-            this.btnStartEmulador.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnStartEmulador.FlatAppearance.BorderSize = 0;
-            this.btnStartEmulador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStartEmulador.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartEmulador.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnStartEmulador.IconChar = FontAwesome.Sharp.IconChar.Golang;
-            this.btnStartEmulador.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnStartEmulador.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnStartEmulador.IconSize = 32;
-            this.btnStartEmulador.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStartEmulador.Location = new System.Drawing.Point(0, 563);
-            this.btnStartEmulador.Margin = new System.Windows.Forms.Padding(4);
-            this.btnStartEmulador.Name = "btnStartEmulador";
-            this.btnStartEmulador.Size = new System.Drawing.Size(212, 55);
-            this.btnStartEmulador.TabIndex = 10;
-            this.btnStartEmulador.Text = "Iniciar Emulador";
-            this.btnStartEmulador.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnStartEmulador.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnStartEmulador.UseVisualStyleBackColor = true;
-            this.btnStartEmulador.Click += new System.EventHandler(this.btnStartEmulador_Click);
             // 
             // btnEndManual
             // 
@@ -331,6 +309,7 @@
             // 
             // pnlFormulario
             // 
+            this.pnlFormulario.Controls.Add(this.groupBox6);
             this.pnlFormulario.Controls.Add(this.groupBox8);
             this.pnlFormulario.Controls.Add(this.groupBox7);
             this.pnlFormulario.Controls.Add(this.pnlDerecho);
@@ -351,7 +330,6 @@
             // 
             // groupBox8
             // 
-            this.groupBox8.Controls.Add(this.btnCalcular);
             this.groupBox8.Controls.Add(this.lblCoeficiente);
             this.groupBox8.Controls.Add(this.label12);
             this.groupBox8.Controls.Add(this.lblDesvio);
@@ -360,19 +338,30 @@
             this.groupBox8.Controls.Add(this.label7);
             this.groupBox8.Controls.Add(this.lstEnsayos2);
             this.groupBox8.ForeColor = System.Drawing.Color.Gainsboro;
-            this.groupBox8.Location = new System.Drawing.Point(492, 324);
+            this.groupBox8.Location = new System.Drawing.Point(492, 277);
             this.groupBox8.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox8.Size = new System.Drawing.Size(440, 281);
+            this.groupBox8.Size = new System.Drawing.Size(440, 221);
             this.groupBox8.TabIndex = 32;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Medicion Ensayos";
             // 
+            // btnCalcular
+            // 
+            this.btnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCalcular.Location = new System.Drawing.Point(19, 523);
+            this.btnCalcular.Name = "btnCalcular";
+            this.btnCalcular.Size = new System.Drawing.Size(180, 84);
+            this.btnCalcular.TabIndex = 8;
+            this.btnCalcular.Text = "Calcular";
+            this.btnCalcular.UseVisualStyleBackColor = true;
+            this.btnCalcular.Click += new System.EventHandler(this.button1_Click);
+            // 
             // lblCoeficiente
             // 
             this.lblCoeficiente.AutoSize = true;
-            this.lblCoeficiente.Location = new System.Drawing.Point(226, 244);
+            this.lblCoeficiente.Location = new System.Drawing.Point(311, 189);
             this.lblCoeficiente.Name = "lblCoeficiente";
             this.lblCoeficiente.Size = new System.Drawing.Size(19, 21);
             this.lblCoeficiente.TabIndex = 7;
@@ -381,7 +370,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(7, 244);
+            this.label12.Location = new System.Drawing.Point(92, 189);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(214, 21);
             this.label12.TabIndex = 6;
@@ -390,7 +379,7 @@
             // lblDesvio
             // 
             this.lblDesvio.AutoSize = true;
-            this.lblDesvio.Location = new System.Drawing.Point(226, 208);
+            this.lblDesvio.Location = new System.Drawing.Point(226, 168);
             this.lblDesvio.Name = "lblDesvio";
             this.lblDesvio.Size = new System.Drawing.Size(19, 21);
             this.lblDesvio.TabIndex = 5;
@@ -399,7 +388,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(8, 208);
+            this.label10.Location = new System.Drawing.Point(8, 168);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(145, 21);
             this.label10.TabIndex = 4;
@@ -408,7 +397,7 @@
             // lblPromedio
             // 
             this.lblPromedio.AutoSize = true;
-            this.lblPromedio.Location = new System.Drawing.Point(375, 208);
+            this.lblPromedio.Location = new System.Drawing.Point(366, 169);
             this.lblPromedio.Name = "lblPromedio";
             this.lblPromedio.Size = new System.Drawing.Size(19, 21);
             this.lblPromedio.TabIndex = 3;
@@ -418,7 +407,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(272, 208);
+            this.label7.Location = new System.Drawing.Point(272, 168);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(88, 21);
             this.label7.TabIndex = 2;
@@ -430,7 +419,7 @@
             this.lstEnsayos2.HideSelection = false;
             this.lstEnsayos2.Location = new System.Drawing.Point(7, 24);
             this.lstEnsayos2.Name = "lstEnsayos2";
-            this.lstEnsayos2.Size = new System.Drawing.Size(425, 166);
+            this.lstEnsayos2.Size = new System.Drawing.Size(425, 142);
             this.lstEnsayos2.TabIndex = 1;
             this.lstEnsayos2.UseCompatibleStateImageBehavior = false;
             this.lstEnsayos2.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lstEnsayos2_ItemSelectionChanged);
@@ -439,11 +428,11 @@
             // 
             this.groupBox7.Controls.Add(this.cmbpropieterio);
             this.groupBox7.ForeColor = System.Drawing.Color.Gainsboro;
-            this.groupBox7.Location = new System.Drawing.Point(236, 110);
+            this.groupBox7.Location = new System.Drawing.Point(236, 77);
             this.groupBox7.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox7.Size = new System.Drawing.Size(229, 87);
+            this.groupBox7.Size = new System.Drawing.Size(229, 77);
             this.groupBox7.TabIndex = 30;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Dueño";
@@ -452,7 +441,7 @@
             // 
             this.cmbpropieterio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbpropieterio.FormattingEnabled = true;
-            this.cmbpropieterio.Location = new System.Drawing.Point(8, 41);
+            this.cmbpropieterio.Location = new System.Drawing.Point(24, 28);
             this.cmbpropieterio.Margin = new System.Windows.Forms.Padding(4);
             this.cmbpropieterio.Name = "cmbpropieterio";
             this.cmbpropieterio.Size = new System.Drawing.Size(196, 29);
@@ -462,11 +451,11 @@
             // 
             this.groupBox5.Controls.Add(this.cmbComPort);
             this.groupBox5.ForeColor = System.Drawing.Color.Gainsboro;
-            this.groupBox5.Location = new System.Drawing.Point(236, 15);
+            this.groupBox5.Location = new System.Drawing.Point(236, 4);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox5.Size = new System.Drawing.Size(229, 80);
+            this.groupBox5.Size = new System.Drawing.Size(229, 66);
             this.groupBox5.TabIndex = 30;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Puerto";
@@ -475,7 +464,7 @@
             // 
             this.cmbComPort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbComPort.FormattingEnabled = true;
-            this.cmbComPort.Location = new System.Drawing.Point(8, 36);
+            this.cmbComPort.Location = new System.Drawing.Point(8, 28);
             this.cmbComPort.Margin = new System.Windows.Forms.Padding(4);
             this.cmbComPort.Name = "cmbComPort";
             this.cmbComPort.Size = new System.Drawing.Size(212, 29);
@@ -485,11 +474,11 @@
             // 
             this.groupBox1.Controls.Add(this.lblFecha);
             this.groupBox1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.groupBox1.Location = new System.Drawing.Point(16, 15);
+            this.groupBox1.Location = new System.Drawing.Point(16, 4);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(212, 80);
+            this.groupBox1.Size = new System.Drawing.Size(212, 66);
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fecha Medicion";
@@ -498,7 +487,7 @@
             // 
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Century Gothic", 12.75F);
-            this.lblFecha.Location = new System.Drawing.Point(8, 41);
+            this.lblFecha.Location = new System.Drawing.Point(8, 24);
             this.lblFecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(128, 25);
@@ -514,7 +503,7 @@
             this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.Controls.Add(this.label4);
             this.groupBox4.ForeColor = System.Drawing.Color.Gainsboro;
-            this.groupBox4.Location = new System.Drawing.Point(16, 209);
+            this.groupBox4.Location = new System.Drawing.Point(16, 162);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
@@ -588,11 +577,11 @@
             // 
             this.groupBox2.Controls.Add(this.cmboperador);
             this.groupBox2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.groupBox2.Location = new System.Drawing.Point(16, 111);
+            this.groupBox2.Location = new System.Drawing.Point(16, 78);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(212, 87);
+            this.groupBox2.Size = new System.Drawing.Size(212, 76);
             this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Operador";
@@ -601,7 +590,7 @@
             // 
             this.cmboperador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmboperador.FormattingEnabled = true;
-            this.cmboperador.Location = new System.Drawing.Point(8, 39);
+            this.cmboperador.Location = new System.Drawing.Point(8, 28);
             this.cmboperador.Margin = new System.Windows.Forms.Padding(4);
             this.cmboperador.Name = "cmboperador";
             this.cmboperador.Size = new System.Drawing.Size(196, 29);
@@ -616,11 +605,11 @@
             this.groupBox3.Controls.Add(this.gaugeHumedad);
             this.groupBox3.Controls.Add(this.gaugeTemperatura);
             this.groupBox3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.groupBox3.Location = new System.Drawing.Point(473, 15);
+            this.groupBox3.Location = new System.Drawing.Point(473, 4);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(459, 183);
+            this.groupBox3.Size = new System.Drawing.Size(459, 150);
             this.groupBox3.TabIndex = 27;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Condiciones";
@@ -628,7 +617,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(357, 144);
+            this.label3.Location = new System.Drawing.Point(357, 125);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 21);
@@ -638,7 +627,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(187, 144);
+            this.label2.Location = new System.Drawing.Point(187, 125);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 21);
@@ -648,7 +637,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 144);
+            this.label1.Location = new System.Drawing.Point(12, 125);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(118, 21);
@@ -661,7 +650,7 @@
             this.gaugePresion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gaugePresion.FontTitle = new System.Drawing.Font("Century Gothic", 8.25F);
             this.gaugePresion.FontUnitLabel = new System.Drawing.Font("Century Gothic", 8.25F);
-            this.gaugePresion.Location = new System.Drawing.Point(336, 41);
+            this.gaugePresion.Location = new System.Drawing.Point(333, 24);
             this.gaugePresion.Margin = new System.Windows.Forms.Padding(4);
             this.gaugePresion.Maximum = 100D;
             this.gaugePresion.Name = "gaugePresion";
@@ -671,11 +660,11 @@
             this.gaugePresion.Theme = CodeArtEng.Gauge.GaugeTheme.Dark;
             this.gaugePresion.Title = "";
             this.gaugePresion.Unit = "bar";
-            this.gaugePresion.UserDefinedColors.Base = themeColors4;
-            themeColors5.PointerColor = System.Drawing.Color.Red;
-            this.gaugePresion.UserDefinedColors.Error = themeColors5;
-            themeColors6.PointerColor = System.Drawing.Color.Orange;
-            this.gaugePresion.UserDefinedColors.Warning = themeColors6;
+            this.gaugePresion.UserDefinedColors.Base = themeColors1;
+            themeColors2.PointerColor = System.Drawing.Color.Red;
+            this.gaugePresion.UserDefinedColors.Error = themeColors2;
+            themeColors3.PointerColor = System.Drawing.Color.Orange;
+            this.gaugePresion.UserDefinedColors.Warning = themeColors3;
             this.gaugePresion.Value = 0D;
             // 
             // gaugeHumedad
@@ -684,7 +673,7 @@
             this.gaugeHumedad.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.gaugeHumedad.FontTitle = new System.Drawing.Font("Century Gothic", 8.25F);
             this.gaugeHumedad.FontUnitLabel = new System.Drawing.Font("Century Gothic", 8.25F);
-            this.gaugeHumedad.Location = new System.Drawing.Point(177, 41);
+            this.gaugeHumedad.Location = new System.Drawing.Point(174, 24);
             this.gaugeHumedad.Margin = new System.Windows.Forms.Padding(4);
             this.gaugeHumedad.Maximum = 100D;
             this.gaugeHumedad.Name = "gaugeHumedad";
@@ -703,7 +692,7 @@
             this.gaugeTemperatura.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.gaugeTemperatura.FontTitle = new System.Drawing.Font("Century Gothic", 8.25F);
             this.gaugeTemperatura.FontUnitLabel = new System.Drawing.Font("Century Gothic", 8.25F);
-            this.gaugeTemperatura.Location = new System.Drawing.Point(19, 41);
+            this.gaugeTemperatura.Location = new System.Drawing.Point(16, 24);
             this.gaugeTemperatura.Margin = new System.Windows.Forms.Padding(4);
             this.gaugeTemperatura.Maximum = 50D;
             this.gaugeTemperatura.Name = "gaugeTemperatura";
@@ -721,11 +710,11 @@
             // 
             this.grpSensores.Controls.Add(this.chartLitros);
             this.grpSensores.ForeColor = System.Drawing.Color.Gainsboro;
-            this.grpSensores.Location = new System.Drawing.Point(16, 324);
+            this.grpSensores.Location = new System.Drawing.Point(16, 277);
             this.grpSensores.Margin = new System.Windows.Forms.Padding(4);
             this.grpSensores.Name = "grpSensores";
             this.grpSensores.Padding = new System.Windows.Forms.Padding(4);
-            this.grpSensores.Size = new System.Drawing.Size(468, 281);
+            this.grpSensores.Size = new System.Drawing.Size(468, 221);
             this.grpSensores.TabIndex = 14;
             this.grpSensores.TabStop = false;
             this.grpSensores.Text = "Lecturas sensor";
@@ -733,54 +722,69 @@
             // chartLitros
             // 
             this.chartLitros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            chartArea2.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle;
-            chartArea2.AxisX.IsLabelAutoFit = false;
-            chartArea2.AxisX.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea2.AxisX.LabelStyle.ForeColor = System.Drawing.Color.Cornsilk;
-            chartArea2.AxisX.LineColor = System.Drawing.Color.Cornsilk;
-            chartArea2.AxisX.MajorGrid.Enabled = false;
-            chartArea2.AxisX.MajorGrid.LineColor = System.Drawing.Color.Cornsilk;
-            chartArea2.AxisX.MajorTickMark.LineColor = System.Drawing.Color.Cornsilk;
-            chartArea2.AxisX.TitleFont = new System.Drawing.Font("Century Gothic", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea2.AxisX2.TitleFont = new System.Drawing.Font("Century Gothic", 6F);
-            chartArea2.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle;
-            chartArea2.AxisY.IsLabelAutoFit = false;
-            chartArea2.AxisY.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea2.AxisY.LabelStyle.ForeColor = System.Drawing.Color.Cornsilk;
-            chartArea2.AxisY.LineColor = System.Drawing.Color.Cornsilk;
-            chartArea2.AxisY.MajorGrid.LineColor = System.Drawing.Color.Cornsilk;
-            chartArea2.AxisY.MajorTickMark.LineColor = System.Drawing.Color.Cornsilk;
-            chartArea2.AxisY.Minimum = 0D;
-            chartArea2.AxisY.TitleFont = new System.Drawing.Font("Century Gothic", 6F);
-            chartArea2.AxisY2.TitleFont = new System.Drawing.Font("Century Gothic", 6F);
-            chartArea2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            chartArea2.Name = "ChartArea1";
-            this.chartLitros.ChartAreas.Add(chartArea2);
+            chartArea1.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle;
+            chartArea1.AxisX.IsLabelAutoFit = false;
+            chartArea1.AxisX.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea1.AxisX.LabelStyle.ForeColor = System.Drawing.Color.Cornsilk;
+            chartArea1.AxisX.LineColor = System.Drawing.Color.Cornsilk;
+            chartArea1.AxisX.MajorGrid.Enabled = false;
+            chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.Cornsilk;
+            chartArea1.AxisX.MajorTickMark.LineColor = System.Drawing.Color.Cornsilk;
+            chartArea1.AxisX.TitleFont = new System.Drawing.Font("Century Gothic", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea1.AxisX2.TitleFont = new System.Drawing.Font("Century Gothic", 6F);
+            chartArea1.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle;
+            chartArea1.AxisY.IsLabelAutoFit = false;
+            chartArea1.AxisY.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea1.AxisY.LabelStyle.ForeColor = System.Drawing.Color.Cornsilk;
+            chartArea1.AxisY.LineColor = System.Drawing.Color.Cornsilk;
+            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.Cornsilk;
+            chartArea1.AxisY.MajorTickMark.LineColor = System.Drawing.Color.Cornsilk;
+            chartArea1.AxisY.Minimum = 0D;
+            chartArea1.AxisY.TitleFont = new System.Drawing.Font("Century Gothic", 6F);
+            chartArea1.AxisY2.TitleFont = new System.Drawing.Font("Century Gothic", 6F);
+            chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            chartArea1.Name = "ChartArea1";
+            this.chartLitros.ChartAreas.Add(chartArea1);
             this.chartLitros.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartLitros.Location = new System.Drawing.Point(4, 24);
             this.chartLitros.Margin = new System.Windows.Forms.Padding(4);
             this.chartLitros.Name = "chartLitros";
-            series2.BorderWidth = 2;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series2.Color = System.Drawing.Color.Cyan;
-            series2.Font = new System.Drawing.Font("Century Gothic", 6F);
-            series2.Name = "Series1";
-            this.chartLitros.Series.Add(series2);
-            this.chartLitros.Size = new System.Drawing.Size(460, 253);
+            series1.BorderWidth = 2;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Color = System.Drawing.Color.Cyan;
+            series1.Font = new System.Drawing.Font("Century Gothic", 6F);
+            series1.Name = "Series1";
+            this.chartLitros.Series.Add(series1);
+            this.chartLitros.Size = new System.Drawing.Size(460, 193);
             this.chartLitros.TabIndex = 29;
             this.chartLitros.Text = "chart4";
             // 
-            // btnCalcular
+            // groupBox6
             // 
-            this.btnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCalcular.Location = new System.Drawing.Point(276, 232);
-            this.btnCalcular.Name = "btnCalcular";
-            this.btnCalcular.Size = new System.Drawing.Size(129, 35);
-            this.btnCalcular.TabIndex = 8;
-            this.btnCalcular.Text = "Calcular";
-            this.btnCalcular.UseVisualStyleBackColor = true;
-            this.btnCalcular.Click += new System.EventHandler(this.button1_Click);
+            this.groupBox6.Controls.Add(this.txtcomentario);
+            this.groupBox6.ForeColor = System.Drawing.Color.Gainsboro;
+            this.groupBox6.Location = new System.Drawing.Point(16, 502);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox6.Size = new System.Drawing.Size(908, 112);
+            this.groupBox6.TabIndex = 34;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Comentarios";
+            // 
+            // txtcomentario
+            // 
+            this.txtcomentario.AccessibleName = "txtcomentarios";
+            this.txtcomentario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtcomentario.Location = new System.Drawing.Point(8, 25);
+            this.txtcomentario.Margin = new System.Windows.Forms.Padding(4);
+            this.txtcomentario.Multiline = true;
+            this.txtcomentario.Name = "txtcomentario";
+            this.txtcomentario.Size = new System.Drawing.Size(889, 78);
+            this.txtcomentario.TabIndex = 33;
+            this.txtcomentario.Text = " ";
+            this.txtcomentario.TextChanged += new System.EventHandler(this.txtcomentario_TextChanged);
             // 
             // frmMedidores
             // 
@@ -811,6 +815,8 @@
             this.groupBox3.PerformLayout();
             this.grpSensores.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartLitros)).EndInit();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -836,7 +842,6 @@
         private System.Windows.Forms.Label lblFecha;
         private FontAwesome.Sharp.IconButton btnStartManual;
         private FontAwesome.Sharp.IconButton btnEndManual;
-        private FontAwesome.Sharp.IconButton btnStartEmulador;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.ComboBox cmbComPort;
         private System.Windows.Forms.GroupBox grpSensores;
@@ -862,5 +867,7 @@
         private System.Windows.Forms.Label lblPromedio;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnCalcular;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.TextBox txtcomentario;
     }
 }
