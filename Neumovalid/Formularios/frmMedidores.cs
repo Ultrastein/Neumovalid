@@ -57,7 +57,7 @@ namespace Neumavalid
             }
             if (cmbComPort.Items.Count > 0)
             {
-                cmbComPort.SelectedIndex = 1;
+                cmbComPort.SelectedIndex = 0;
             }
             Common.checkIniFileExistAndFill();
             var parser = new FileIniDataParser();
@@ -210,7 +210,7 @@ namespace Neumavalid
             }
             else if (sensor == SensorVolumen)
             {
-                chartLitros.Series[chartLitros.Series.Count - 1].Points.AddXY(DateTime.Now.ToLongTimeString(), Convert.ToInt32(newValue));
+                chartLitros.Series[chartLitros.Series.Count - 1].Points.AddXY(DateTime.Now.ToLongTimeString(), Convert.ToDouble(newValue));
                // ListaMediciones.Add(new Tuple<int, string>(Convert.ToInt32(newValue), DateTime.Now.ToLongDateString() + "::" + DateTime.Now.ToLongTimeString()));
 
                 ListaMediciones.Add(new Medicion(DateTime.Now,Convert.ToDouble(newValue.Replace(".",","))));
@@ -298,6 +298,7 @@ namespace Neumavalid
 
             }
             contents += "comentarios::"+ txtcomentario.Text.ToString() + "\n";
+            contents += "________________________________________________________________________________" + "\n";
             //contents += "Mediciones de Volumen\n";
 
             //if (ListaMediciones.Count>0)
@@ -412,6 +413,7 @@ namespace Neumavalid
         private void btnStartManual_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
+            
             if (puerto_serie == null)
             {
                 string puerto = cmbComPort.GetItemText(this.cmbComPort.SelectedItem);
@@ -420,23 +422,43 @@ namespace Neumavalid
                 puerto_serie.Handshake = Handshake.None;
                 puerto_serie.DataReceived += new SerialDataReceivedEventHandler(sp_DataReceived);
                 puerto_serie.WriteTimeout = 500;
-             
+                puerto_serie.Open();
+
+            }
+            else{
+                puerto_serie = null;
+                string puerto = cmbComPort.GetItemText(this.cmbComPort.SelectedItem);
+                puerto_serie = new SerialPort(puerto, 115200); // colocar COM y baudrate corresp.
+                puerto_serie.ReadTimeout = 20;
+                puerto_serie.Handshake = Handshake.None;
+                puerto_serie.DataReceived += new SerialDataReceivedEventHandler(sp_DataReceived);
+                puerto_serie.WriteTimeout = 500;
+                puerto_serie.Close();
+                puerto_serie.Open();
+
+
+
             }
 
-            if(puerto_serie != null && puerto_serie.IsOpen)
+            if (puerto_serie != null && puerto_serie.IsOpen)
             {
                 puerto_serie.Close();
+                puerto_serie.Open();
+
             }
             if (puerto_serie != null )
             {
+                puerto_serie.Close();
                 puerto_serie.Open();
                 puerto_serie.Write(cmdStart + "\r\n");
                 puerto_serie.Close();
+                puerto_serie.Open();
+
             }
 
-        }
 
-        private void btnEndManual_Click(object sender, EventArgs e)
+        }
+private void btnEndManual_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
             if (puerto_serie == null)
@@ -447,18 +469,60 @@ namespace Neumavalid
                 puerto_serie.Handshake = Handshake.None;
                 puerto_serie.DataReceived += new SerialDataReceivedEventHandler(sp_DataReceived);
                 puerto_serie.WriteTimeout = 500;
-
+                puerto_serie.Open();
             }
 
             if (puerto_serie != null && puerto_serie.IsOpen)
             {
                 puerto_serie.Close();
+                puerto_serie.Open();
             }
             if (puerto_serie != null)
             {
+                puerto_serie.Close();
                 puerto_serie.Open();
                 puerto_serie.Write(cmdStop + "\r\n");
                 puerto_serie.Close();
+
+            }
+            
+            if (puerto_serie != null && puerto_serie.IsOpen)
+            {
+                puerto_serie.Close();
+
+            }
+
+            int nroensayo = Convert.ToInt32(cmbNumEnsayo.Value);
+
+            if (ListaMediciones.Count > 0)
+            {
+
+                //verifico que el nro de ensayo no exista sino remplazo
+                Ensayo existe = ListaEnsayos.Where(x => x.nroEnsayo == nroensayo).FirstOrDefault();
+                if (existe != null)
+                {
+                    ListaEnsayos.Remove(existe);
+                    foreach (ListViewItem itemlv in lstEnsayos2.Items)
+                    {
+                        if (itemlv.SubItems[0].Text == cmbNumEnsayo.Value.ToString())
+                        {
+                            lstEnsayos2.Items.Remove(itemlv);
+                        }
+                    }
+                }
+
+                ListaEnsayos.Add(new Ensayo(nroensayo, ListaMediciones[ListaMediciones.Count - 1]));
+
+                ListViewItem item = new ListViewItem();
+                item.SubItems.Clear();
+                item.SubItems[0].Text = nroensayo.ToString();
+
+                item.SubItems.Add(ListaMediciones[ListaMediciones.Count - 1].fechaToma.ToString());
+                item.SubItems.Add(ListaMediciones[ListaMediciones.Count - 1].valorToma.ToString());
+                lstEnsayos2.Items.Add(item);
+
+
+                chartLitros.Series[chartLitros.Series.Count - 1].Points.Clear();
             }
         }
 
@@ -580,6 +644,21 @@ namespace Neumavalid
         }
 
         private void txtcomentario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chartLitros_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lstEnsayos2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
         {
 
         }
